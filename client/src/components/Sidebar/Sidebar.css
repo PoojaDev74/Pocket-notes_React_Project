@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex
+
+}
+/* -------sidebar-------- */
+.sidebar{
+    width: 20vw;
+    height: 100vh;
+scrollbar-width:thin;
+scroll-behavior: smooth;
+overflow-y: auto; 
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+.heading{
+    padding-top: 20px;
+    letter-spacing: 2px;
+    font-size: xx-large;
+    position: fixed;
+    font-weight: 500;
+
+}
+.groupNames{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 80px;
+    width: 100%;
+    
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+}
+
+ li a {
+    padding: 10px 15px;
+    gap: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white; 
+height: auto;
+ } 
+ 
+li a.active {
+background-color: rgb(217, 214, 214);
+color: black;
+}
+a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #16008B;
+    padding: 10px 15px; 
+    height: auto; 
+}
+
+.circle-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    margin-left: 20px;
+}
+
+h3{
+    margin-top: 0px;
+    font-size: 1.1rem;
+
+}
+.group-btn{
+    position: fixed;
+     bottom: 5%;
+    left: 14%; 
+    font-size: 2em;
+    color: white;
+    background-color: #16008B;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+
+
+/* Mobile-specific styles */
+
+@media (max-width: 1150px) {
+    .heading {
+    margin-bottom: 20px;
+        font-size: 1.9rem;
+       position: fixed;
+    }
+    .sidebar{
+        width:27vw;
+        height: 100vh;
+        padding-bottom: 30px;
+    }
+    .group-btn{
+        position: fixed;
+         left: 20%;
+        }
+
+}
+
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column; 
+    }
+
+    .sidebar {
+        width: 100vw;
+        height: 100vh; 
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding-bottom: 60px;
+        overflow-y: auto;
+        order: 1;
+    }
+
+    .heading {
+        margin: 5% 20% 10% 10% ;
+        font-size: 2.5rem;
+        position: fixed; 
+    }
+
+    .groupNames {
+        margin-top: 20%; 
+        width: 90%; 
+        flex: 1; 
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+        gap: 13px;
+        list-style: none;
+
+    }
+
+     li a {
+        padding: 10px 29px;
+        gap: 1%;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: white; 
+height: 9vh;
+     } 
+     
+li a.active {
+    background-color: rgb(217, 214, 214);
+    color: black;
+  }
+    a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+    }
+    .circle-name {
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        font-weight:500;
+        letter-spacing: 2px;
+        position:absolute;
+        left: 20%;
+    }
+
+    .group-btn {
+        position: fixed;
+        bottom: 40px;
+        right: 45px; 
+        left: auto;
+        font-size: 3.2rem;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        z-index: 1000; 
+    }
+}
+
+
+@media (max-width:500px) {
+
+    .heading {
+        margin: 5% 20% 10% 10% ;
+        font-size: 2rem;
+        position: fixed; 
+       font-weight: 500;
+    }
+
+    .groupNames {
+        margin-top: 26%; 
+        width: 90%; 
+        flex: 1; 
+    }
+    h3 {
+        font-size: 1.3rem;
+        font-weight:500;
+        letter-spacing: 2px;
+        position:absolute;
+        left: 23%;
+    }
+    
+}

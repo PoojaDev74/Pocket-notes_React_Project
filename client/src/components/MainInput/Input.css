@@ -1,0 +1,279 @@
+.content{
+    width: 100vw;
+    height: 100vh;
+    background-color:#DAE5F5;
+margin: 0%;
+padding: 0%;
+}
+
+/* ---------------NAVBAR SECTION----------------- */
+.navbar {
+  display: flex;
+  align-items:center;
+  background-color: #001F8B;
+  color: white;
+  justify-content: space-between; 
+  height: 8%; 
+  box-sizing: border-box;
+  width: 80vw;
+}
+.Nav1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}  
+  .nav { 
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    
+  }
+  
+  .circle-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .nav-heading {
+    font-size: 1.2rem;
+    /* margin: 10;  */
+    max-width: 60%;
+  }
+  .navbar .btn2 {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1rem; 
+    cursor: pointer;
+    position: absolute;
+    right: 3%; 
+  }
+/* -----------------NOTES SECTION---------------- */
+
+
+
+.note-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: auto;
+    position: relative;
+    /* margin-top: 10px;  */
+    background-color: #16008B;
+    padding: 10px;
+    box-sizing: border-box;
+    top:4em;
+    height: 20vh;
+}
+
+.new-note-input{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
+    position: relative;
+    
+}
+  textarea{
+    width: 76vw;
+    height: 14vh;
+    font-size: larger;
+    text-align: justify; 
+    font-family: 'Roboto', sans-serif;
+    /* box-sizing: border-box;  */
+    position: absolute;
+    border-radius: 16px;
+    padding: 10px;
+left: 2%;
+border: none; 
+  }
+textarea:focus {
+    outline: none;
+  }
+
+  .note-input::placeholder{
+position: absolute;
+top: 10%;
+font-size: large;
+  }
+.note-btn{
+  background-color: transparent;
+  border: none;
+  color: #001F8B;
+  font-size: 1.8rem; /* Adjust font size */
+  cursor: pointer;
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px; /* Ensure minimum width for touch */
+  min-height: 40px;
+  position: absolute;
+  left: 94%;
+
+}
+.note-btn:not([disabled]) {
+    color: #001F8B;
+    cursor: pointer; 
+  }
+
+.note-btn[disabled] {
+    color: rgb(208, 204, 204);
+
+}
+
+.records {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    gap: 14px; 
+    padding: 10px; 
+    box-sizing: border-box;
+  }
+  
+  .records-main {
+    overflow-y: auto; 
+    height: 60vh; 
+    padding: 10px; 
+  }
+  
+  .record {
+    background-color: white; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    padding: 10px; 
+    margin-bottom: 5px; 
+    width: 100%; 
+    height: auto;
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: justify;
+  }
+  
+  .record h1 {
+    font-size: 1.7em;
+    margin-bottom: 5px;
+  }
+  
+  .record p {
+    font-size: 1.1rem; /* Adjust font size */
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .record .note-created-at{
+align-self: flex-end;
+   font-size: 0.7rem;
+margin-bottom: 0;
+   font-weight: 500;
+}
+
+
+
+/* -----------Background Image--------------- */
+ .content-img{
+  display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+    position: relative; 
+    top: 20%;
+    line-height: 25px;
+}
+img{
+    height: 40vh;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 450px;
+}
+.content-heading{
+    font-size: xx-large;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+.content-end{
+    margin-top: 120px;
+}
+.content-end:hover{
+    text-decoration:underline;
+cursor: pointer;
+}
+.content-end{
+position: absolute;
+bottom: -42%;
+}  
+i{
+    font-size: small;
+    margin-right: 3px;
+} 
+
+
+
+
+
+@media (max-width:500px) {
+  .content{
+    width: 100vw;
+    height: 100vh;
+}
+
+  .navbar {
+    width: 100vw;
+    height: 7%;
+  }
+
+  .nav-heading {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+position: absolute;
+left: 23%;
+  }
+  .back-arrow-link i{
+    color: white;
+    font-size: 1.1rem;
+  }
+  .circle-name {
+    font-size: 1rem;
+    color: white;
+    position: absolute;
+    left: 5%;
+  }
+  
+  .note-container {
+    width: 100vw;
+    /* min-height: auto;  */
+    position: relative;
+    top:9.3%;
+    height: 22vh;
+}
+
+.new-note-input{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
+    position: relative;
+    /* top: 2%; */
+    
+}
+  textarea{
+    width: 90vw;
+    height: 16vh;
+position: absolute;
+  }
+
+.note-btn{
+  position: absolute;
+  left: 84%;
+}
+}
