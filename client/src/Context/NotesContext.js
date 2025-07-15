@@ -23,7 +23,7 @@ const NotesContext = ({ children }) => {
 
   const createGroup = async (name,color) => {
     try {
-      const response = await axios.post('https://pocketnotes-backend-vsva.onrender.com/api/groups', { name , color });
+      const response = await axios.post('https://pocketnotes-app-backend.onrender.com/api/groups', { name , color });
       getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
