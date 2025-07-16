@@ -1,3 +1,28 @@
+.welcome-section {
+  flex: 1;
+  background-color: #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.empty-state {
+  margin: auto;
+  text-align: center;
+}
+
+.empty-state h2 {
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 18px;
+  color: #666666;
+}
+
 .welcome-screen {
   flex: 1;
   padding: 60px;
@@ -23,20 +48,6 @@ img {
   padding-top: 10px;
 }
 
-.empty-state {
-  margin: auto;
-  text-align: center;
-}
 
-.empty-state h2 {
-  font-size: 32px;
-  color: #333333;
-  margin-bottom: 10px;
-}
-
-.empty-state p {
-  font-size: 18px;
-  color: #666666;
-}
 
 
