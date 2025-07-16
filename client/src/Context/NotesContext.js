@@ -17,9 +17,23 @@ const NotesContext = ({ children }) => {
       console.error('Error fetching groups:', error);
     }
   }, []);
-//   useEffect(()=>{
-// getGroups()
-//   },[])
+
+  useEffect(() => {
+  const firstVisit = localStorage.getItem("firstVisit");
+
+  if (!firstVisit) {
+    localStorage.removeItem("groups");
+    localStorage.removeItem("notes");
+    localStorage.removeItem("selectedGroup");
+
+    setGroups([]);
+    setNotes([]);
+    setSelectedGroup(null);
+
+    localStorage.setItem("firstVisit", "true");
+  }
+  }, []);
+
 
   const createGroup = async (name,color) => {
     try {
