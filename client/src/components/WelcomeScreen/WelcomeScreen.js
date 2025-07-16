@@ -4,6 +4,7 @@ import './WelcomeScreen.css';
 
 const WelcomeScreen = () => {
   return (
+    <div className="welcome-section">
     <div className="welcome-screen">
       <img src={backgroundImage} alt="Pocket Notes Background" />
      <div className="empty-state">
@@ -12,6 +13,7 @@ const WelcomeScreen = () => {
       <p>Use Pocket Notes on up to 4 linked devices and 1 mobile phone.</p>
      </div>
       <div className="footer">🔒 end-to-end encrypted</div>
+    </div>
     </div>
   );
 };
