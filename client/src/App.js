@@ -23,14 +23,19 @@ return (
   <Router>
     {isMobile ? (
       <Routes>
-        <Route path="/" element={<Sidebar/>} />
+        <Route path="/" element={
+         <>
+          <Sidebar />
+          {!selectedGroup ? <WelcomeScreen /> : <Input />}
+         </>
+        } />
         <Route path="/group/:groupId/notes" element={<Input/>} />
         <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
       </Routes>
     )  : (
       <>
-          <Sidebar onStart={handleStart} showGroups={showGroups} />
-          {showGroups ? <Input /> : <WelcomeScreen />}
+         <Sidebar />
+         {selectedGroup ? <Input /> : <WelcomeScreen />}
       </>
     )}
     {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
