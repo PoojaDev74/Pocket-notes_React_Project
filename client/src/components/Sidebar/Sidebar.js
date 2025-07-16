@@ -37,7 +37,7 @@ const Sidebar = ({ showGroups, onStart }) => {
         <h1 className="heading">Pocket Notes</h1>
         <div className="groupNames">
           <ul>
-            {groups &&
+            {groups && groups.length > 0 ? (
               groups.map((group) => (
                 <li key={group._id}>
                   {isMobile ? (
@@ -77,7 +77,8 @@ const Sidebar = ({ showGroups, onStart }) => {
                     </>
                   )}
                 </li>
-              ))}
+              ))
+            ) : null}
             <button className="group-btn" onClick={handlePlusClick}>
               +
             </button>
