@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import { Data } from "../../Context/NotesContext";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ showGroups, onStart }) => {
   const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } =
     useContext(Data);
 
@@ -23,6 +23,13 @@ const Sidebar = () => {
     }
   };
   const isMobile = window.innerWidth <= 700;
+
+  const handlePlusClick = () => {
+    if (onStart) {
+      onStart(); 
+    }
+    toggleNewGroupPopup(); 
+  };
 
   return (
     <div className="container">
@@ -71,7 +78,7 @@ const Sidebar = () => {
                   )}
                 </li>
               ))}
-            <button className="group-btn" onClick={toggleNewGroupPopup}>
+            <button className="group-btn" onClick={handlePlusClick}>
               +
             </button>
           </ul>
