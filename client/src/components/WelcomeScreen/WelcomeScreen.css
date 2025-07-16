@@ -1,0 +1,12 @@
+.main-img {
+  flex: 1;
+  padding: 60px;
+  background-position: 50%;
+  ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 100px;
+}
