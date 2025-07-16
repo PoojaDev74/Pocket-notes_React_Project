@@ -5,23 +5,19 @@ import Input from './components/MainInput/Input';
 import Sidebar from './components/Sidebar/Sidebar';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import {Data}  from './Context/NotesContext';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
 
 function App() {
 
 const { newGroupPopupVisible, toggleNewGroupPopup } = useContext(Data);
+const [showGroups, setShowGroups] = useState(false);
 const isMobile = window.innerWidth <= 700;
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(window.innerWidth <= 700);
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
-
+  const handleStart = () => {
+    setShowGroups(true);
+  };
+  
 return (
  <div className="App"> 
   <Router>
@@ -33,8 +29,8 @@ return (
       </Routes>
     )  : (
       <>
-        <Sidebar />
-        {selectedGroup ? <Input /> : <WelcomeScreen />}
+          <Sidebar onStart={handleStart} showGroups={showGroups} />
+          {showGroups ? <Input /> : <WelcomeScreen />}
       </>
     )}
     {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
