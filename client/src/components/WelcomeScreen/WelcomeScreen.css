@@ -22,3 +22,21 @@ img {
   color: #888;
   padding-top: 10px;
 }
+
+.empty-state {
+  margin: auto;
+  text-align: center;
+}
+
+.empty-state h2 {
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 18px;
+  color: #666666;
+}
+
+
