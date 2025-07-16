@@ -1,25 +1,18 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Data } from "../../Context/NotesContext";
+import { useContext } from "react";
 import "./Input.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
 // --------------Input Section------------------
 const Input = () => {
-  const {
-    groups,
-    createNote,
-    selectedGroup,
-    deleteGroup,
-    notes,
-  } = useContext(Data);
-
+  const { groups, createNote, selectedGroup, deleteGroup } = useContext(Data);
   const [newNoteInput, setNewNoteInput] = useState("");
+  const notesContext = useContext(Data);
   const { groupId } = useParams();
   const [currentGroup, setCurrentGroup] = useState(null);
   const navigate = useNavigate();
   const isMobile = window.innerWidth <= 700;
-
-  // Find the group by URL param (mobile view)
   useEffect(() => {
     if (groupId && groups) {
       const foundGroup = groups.find((group) => group._id === groupId);
@@ -27,116 +20,124 @@ const Input = () => {
     }
   }, [groupId, groups]);
 
-  // -------------Date and Time Format--------------
+  // -------------Date and time Format--------------
   const formatDateForDisplay = (dateString) => {
     if (!dateString) return "";
     const date = new Date(dateString);
-    return `${date.getDate()} ${date.toLocaleString("en-US", {
-      month: "short",
-    })} ${date.getFullYear()}  •  ${date.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    })}`;
+    return ${date.getDate()} ${date.toLocaleString("en-US", { month: "short" })} ${date.getFullYear()}  •  ${date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true })};
   };
 
-  // ---------------Create Note------------------
+  // ---------------Creating of Notes------------------
   const handleCreateNote = () => {
     if (selectedGroup && newNoteInput.trim()) {
+      const timestampISO = new Date().toISOString();
       const newNote = {
         info: newNoteInput,
         groupId: selectedGroup._id,
-        createdAt: new Date().toISOString(),
+        createdAt: timestampISO,
       };
       createNote(newNote);
       setNewNoteInput("");
     }
   };
 
-  const handleInputChange = (e) => setNewNoteInput(e.target.value);
+  const handleInputChange = (e) => {
+    setNewNoteInput(e.target.value);
+  };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter" && newNoteInput.trim()) {
-      e.preventDefault();
+    if (e.key === "Enter" && newNoteInput.trim() && selectedGroup) {
       handleCreateNote();
     }
   };
+  useEffect(() => {}, [notesContext.notes, selectedGroup]);
 
-  // ------------------Delete Group-----------------
+  //  ------------------Deleting of groups-----------------
   const handleDeleteGroup = async (groupId) => {
     await deleteGroup(groupId);
     setCurrentGroup(null);
     navigate("/");
   };
 
-  // ----------------Group Initials----------------
+  //  ----------------Trimming of the Group Name---------------
   const trimGroupName = (name) => {
-    if (!name) return "";
+    if (!name || typeof name !== "string") {
+      return "";
+    }
     const words = name.split(" ");
-    return words.length === 1
-      ? words[0].charAt(0).toUpperCase()
-      : words[0].charAt(0).toUpperCase() + words[1].charAt(0).toUpperCase();
+    if (words.length === 0) {
+      return "";
+    } else if (words.length === 1) {
+      return words[0].charAt(0).toUpperCase();
+    } else {
+      const firstLetterFirstWord = words[0].charAt(0).toUpperCase();
+      const firstLetterSecondWord = words[1].charAt(0).toUpperCase();
+      return ${firstLetterFirstWord}${firstLetterSecondWord};
+    }
   };
-
-  const group = isMobile ? currentGroup : selectedGroup;
 
   return (
     <div className="content">
-      {group ? (
+      {selectedGroup ? (
         <>
-          {/* --------------Header / Navbar-------------- */}
           <div className="navbar">
             {isMobile ? (
               <div className="Nav1">
                 <Link to="/" className="back-arrow-link">
-                  <i className="fa-solid fa-arrow-left"></i>
+                  <i class="fa-solid fa-arrow-left"></i>
                 </Link>
                 <div
                   className="circle-name"
-                  style={{ backgroundColor: group.color }}
+                  style={{ backgroundColor: selectedGroup.color }}
                 >
-                  {trimGroupName(group.name)}
+                  {trimGroupName(selectedGroup.name)}
                 </div>
-                <h3 className="nav-heading">{group.name}</h3>
+                <h3 className="nav-heading">{selectedGroup.name}</h3>
               </div>
             ) : (
               <div className="nav">
                 <div
                   className="circle-name"
-                  style={{ backgroundColor: group.color }}
+                  style={{ backgroundColor: selectedGroup.color }}
                 >
-                  {trimGroupName(group.name)}
+                  {trimGroupName(selectedGroup.name)}
                 </div>
-                <h3 className="nav-heading">{group.name}</h3>
+                <h3 className="nav-heading">{selectedGroup.name}</h3>
               </div>
             )}
           </div>
 
-          {/* --------------Notes List-------------- */}
+{/* -------------records of input------------------ */}
           <div className="records">
-            <div className="records-main">
-              {notes
-                .filter((note) => note.groupId === group._id)
-                .map((item) => (
-                  <div className="record" key={item._id}>
-                    <p>{item.info}</p>
-                    {item.createdAt && (
-                      <p className="note-created-at">
-                        {formatDateForDisplay(item.createdAt)}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              {notes.filter((note) => note.groupId === group._id).length === 0 && (
-                <p>No notes for this group yet.</p>
-              )}
-            </div>
+            {notesContext.notes && Array.isArray(notesContext.notes) && (
+              <div className="records-main">
+                {notesContext.notes
+                  .filter(
+                    (note) =>
+                      selectedGroup && note.groupId === selectedGroup._id
+                  )
+                  .map((item) => (
+                    <div className="record" key={item._id}>
+                      <p>{item.info}</p>
+                      {item.createdAt && (
+                        <p className="note-created-at">
+                          {formatDateForDisplay(item.createdAt)}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                {notesContext.notes.filter(
+                  (note) => selectedGroup && note.groupId === selectedGroup._id
+                ).length === 0 && <p>No notes for this group yet.</p>}
+              </div>
+            )}
           </div>
 
-          {/* --------------Note Input-------------- */}
+  {/* ------------------note Input Container---------------*/}
           <div className="note-container">
             <div className="new-note-input">
               <textarea
+                type="text"
                 value={newNoteInput}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
@@ -144,7 +145,7 @@ const Input = () => {
                 className="note-input"
               />
               <button
-                className={`note-btn ${newNoteInput.trim() ? "active" : "disabled"}`}
+                className="note-btn "
                 onClick={handleCreateNote}
                 disabled={!newNoteInput.trim()}
               >
@@ -154,21 +155,21 @@ const Input = () => {
           </div>
         </>
       ) : (
-        // --------------Default Welcome Screen (Desktop)--------------
         !isMobile && (
           <div className="content-img">
             <img
               src={require("../../Assests/background-image.png")}
-              alt="Pocket Notes"
+              alt="main"
             />
             <h2 className="content-heading">Pocket Notes</h2>
             <p>
               Send and receive messages without keeping your phone online.
               <br />
-              Use Pocket Notes on up to 4 linked devices and 1 mobile phone.
+              Use Pocket Notes on up to 4 linked devices and 1 mobile phone
             </p>
             <p className="content-end">
-              <i className="fa-solid fa-lock"></i> end-to-end encrypted
+              {" "}
+              <i class="fa-solid fa-lock"></i>end-to-end encrypted
             </p>
           </div>
         )
