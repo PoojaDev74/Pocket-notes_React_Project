@@ -2,11 +2,23 @@
   flex: 1;
   padding: 60px;
   background-position: 50%;
-  ;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   padding: 100px;
+}
+
+img {
+  max-width: 800px;
+  height: 40vh;
+  margin-bottom: 60px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  padding-top: 10px;
 }
