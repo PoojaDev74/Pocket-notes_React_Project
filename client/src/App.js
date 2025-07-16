@@ -13,39 +13,34 @@ function App() {
 const { newGroupPopupVisible, toggleNewGroupPopup } = useContext(Data);
 const isMobile = window.innerWidth <= 700;
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth <= 700);
+  //   };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
 return (
-  <div className="App"> 
-  {isMobile ? (
-    <Router>
+ <div className="App"> 
+  <Router>
+    {isMobile ? (
       <Routes>
         <Route path="/" element={<Sidebar/>} />
         <Route path="/group/:groupId/notes" element={<Input/>} />
         <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
       </Routes>
-      {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
-    </Router>
-  )  : (
-   <>
-  <Router> 
-     <div className="desktop-container">
-        <Sidebar/>
+    )  : (
+      <>
+        <Sidebar />
         {selectedGroup ? <Input /> : <WelcomeScreen />}
-        {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
-     </div>
+      </>
+    )}
+    {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
   </Router>
-  </>
-      )}
-  </div>
-);
+    </div>
+  );
 }
 
 export default App;
