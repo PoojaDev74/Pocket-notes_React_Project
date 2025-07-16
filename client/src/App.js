@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PostGroup from "./components/GroupPopUp/PostGroup"
 import Input from './components/MainInput/Input';
 import Sidebar from './components/Sidebar/Sidebar';
+import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import {Data}  from './Context/NotesContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 
 function App() {
@@ -12,10 +13,17 @@ function App() {
 const { newGroupPopupVisible, toggleNewGroupPopup } = useContext(Data);
 const isMobile = window.innerWidth <= 700;
 
-return (
-  <div className="App">
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 700);
+    };
 
-    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+return (
+  <div className="App"> 
   {isMobile ? (
     <Router>
       <Routes>
@@ -26,15 +34,16 @@ return (
       {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
     </Router>
   )  : (
-              <>
-      <Router> 
-  <Sidebar/>
-  <Input/>
-  {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
+   <>
+  <Router> 
+     <div className="desktop-container">
+        <Sidebar/>
+        {selectedGroup ? <Input /> : <WelcomeScreen />}
+        {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
+     </div>
   </Router>
-
   </>
-          )}
+      )}
   </div>
 );
 }
