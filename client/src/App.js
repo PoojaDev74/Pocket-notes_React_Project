@@ -25,16 +25,17 @@ return (
       <Routes>
         <Route path="/" element={
          <>
-          <Sidebar />
+          <Sidebar showGroups={showGroups} onStart={handleStart} />
           {!selectedGroup ? <WelcomeScreen /> : <Input />}
          </>
-        } />
+        } 
+        />
         <Route path="/group/:groupId/notes" element={<Input/>} />
         <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
       </Routes>
     )  : (
       <>
-         <Sidebar />
+         <Sidebar showGroups={showGroups} onStart={handleStart} />
          {selectedGroup ? <Input /> : <WelcomeScreen />}
       </>
     )}
