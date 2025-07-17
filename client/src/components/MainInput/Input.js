@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify"; 
 import { Data } from "../../Context/NotesContext";
+import WelcomeScreen from "../components/WelcomeScreen/WelcomeScreen";
 import "./Input.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
