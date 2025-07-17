@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -42,6 +43,7 @@ app.use(cors(corsOptions));
 
 // Routes
 app.use("/api", noteRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running at PORT: ${port}`);
