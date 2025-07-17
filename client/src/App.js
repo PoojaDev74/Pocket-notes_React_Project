@@ -6,7 +6,8 @@ import Sidebar from './components/Sidebar/Sidebar';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import {Data}  from './Context/NotesContext';
 import { useContext, useState } from 'react';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -40,7 +41,15 @@ return (
       </>
     )}
     {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
-  </Router>
+    </Router>
+       <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        theme="light"
+       />
     </div>
   );
 }
