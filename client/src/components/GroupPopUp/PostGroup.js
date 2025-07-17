@@ -1,8 +1,9 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { Data } from '../../Context/NotesContext';
 import "./popUp.css"
 const PostGroup = ({ onClose }) => {
-  const { createGroup } = useContext(Data);
+  const { createGroup, groups } = useContext(Data);
   const [groupName, setGroupName] = useState('');
   const popupRef = useRef(null);
   const [selectedColor, setSelectedColor] = useState('#a879ff');
