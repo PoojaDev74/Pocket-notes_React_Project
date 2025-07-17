@@ -41,17 +41,30 @@ const Input = () => {
   };
 
   // ---------------Create Note------------------
-  const handleCreateNote = () => {
-    if (selectedGroup && newNoteInput.trim()) {
-      const newNote = {
-        info: newNoteInput,
-        groupId: selectedGroup._id,
-        createdAt: new Date().toISOString(),
-      };
-      createNote(newNote);
-      setNewNoteInput("");
-    }
-  };
+ const handleCreateNote = () => {
+  const trimmedNote = newNoteInput.trim();
+
+  if (!trimmedNote) {
+    toast.error("Note cannot be empty.");
+    return;
+  }
+
+  if (trimmedNote.length < 3) {
+    toast.error("Note must be at least 3 characters long.");
+    return;
+  }
+
+  if (selectedGroup) {
+    const newNote = {
+      info: trimmedNote,
+      groupId: selectedGroup._id,
+      createdAt: new Date().toISOString(),
+    };
+    createNote(newNote);
+    setNewNoteInput("");
+    toast.success("Note added successfully.");
+  }
+};
 
   const handleInputChange = (e) => setNewNoteInput(e.target.value);
 
