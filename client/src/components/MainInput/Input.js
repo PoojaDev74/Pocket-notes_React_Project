@@ -169,22 +169,8 @@ const Input = () => {
         </>
       ) : (
         // --------------Default Welcome Screen (Desktop)--------------
-        !isMobile && (
-          <div className="content-img">
-            <img
-              src={require("../../Assests/background-image.png")}
-              alt="Pocket Notes"
-            />
-            <h2 className="content-heading">Pocket Notes</h2>
-            <p>
-              Send and receive messages without keeping your phone online.
-              <br />
-              Use Pocket Notes on up to 4 linked devices and 1 mobile phone.
-            </p>
-            <p className="content-end">
-              <i className="fa-solid fa-lock"></i> end-to-end encrypted
-            </p>
-          </div>
+       {!selectedGroup &&  !isMobile && (
+            <WelcomeScreen />
         )
       )}
     </div>
