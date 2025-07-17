@@ -31,6 +31,27 @@ const NotesContext = ({ children }) => {
     setSelectedGroup(null);
 
     localStorage.setItem("firstVisit", "true");
+    return;
+  }
+
+  const storedGroups = localStorage.getItem("groups");
+  const storedNotes = localStorage.getItem("notes");
+  const storedSelectedGroup = localStorage.getItem("selectedGroup");
+
+  if (storedGroups) {
+    setGroups(JSON.parse(storedGroups));
+  } else {
+    getGroups();
+  }
+
+  if (storedNotes) {
+    setNotes(JSON.parse(storedNotes));
+  }
+
+  if (storedSelectedGroup) {
+    const group = JSON.parse(storedSelectedGroup);
+    setSelectedGroup(group);
+    getNotes(group._id);
   }
   }, []);
 
