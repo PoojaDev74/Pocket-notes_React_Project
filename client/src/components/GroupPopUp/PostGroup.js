@@ -13,17 +13,29 @@ const PostGroup = ({ onClose }) => {
   const handleColorSelect = (color) => {
     setSelectedColor(color);
   };
+
   const handleCreate = () => {
-    if (groupName.trim().length >= 2) {
-      createGroup(groupName.trim(),selectedColor);
-      setGroupName('');
-      onClose();
-    } 
-    
-    else {
-      alert('Group name must be at least 2 characters.');
+    const trimmedName = groupName.trim();
+
+    if (trimmedName.length < 2) {
+      toast.error("Group name must be at least 2 characters.");
+      return;
     }
-  };
+    
+    const groupExists = groups?.some(
+      (group) => group.name.toLowerCase() === trimmedName.toLowerCase()
+    );
+
+    if (groupExists) {
+      toast.error("Group name already exists.");
+      return;
+    }
+
+    createGroup(trimmedName, selectedColor);
+    setGroupName('');
+    onClose();
+    };
+
 
   const handleOutsideClick = (event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
