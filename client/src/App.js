@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
-const { newGroupPopupVisible, toggleNewGroupPopup } = useContext(Data);
+const { newGroupPopupVisible, toggleNewGroupPopup, selectedGroup } = useContext(Data);
 const [showGroups, setShowGroups] = useState(false);
 const isMobile = window.innerWidth <= 700;
 
