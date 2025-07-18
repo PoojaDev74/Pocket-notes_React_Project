@@ -40,7 +40,7 @@ padding: 0%;
     color: white;
   }
   
-  .nav-heading {
+  .navHeading {
     font-size: 1.2rem;
     /* margin: 10;  */
     max-width: 60%;
@@ -58,7 +58,7 @@ padding: 0%;
 
 
 
-.note-container {
+.noteContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +73,7 @@ padding: 0%;
     height: 20vh;
 }
 
-.new-note-input{
+.newNoteInput{
     display: flex;
     align-items: center; 
     justify-content: space-between; 
@@ -98,12 +98,12 @@ textarea:focus {
     outline: none;
   }
 
-  .note-input::placeholder{
+  .noteInput::placeholder{
 position: absolute;
 top: 10%;
 font-size: large;
   }
-.note-btn{
+.noteBtn{
   background-color: transparent;
   border: none;
   color: #001F8B;
@@ -119,12 +119,12 @@ font-size: large;
   left: 94%;
 
 }
-.note-btn:not([disabled]) {
+.noteBtn:not([disabled]) {
     color: #001F8B;
     cursor: pointer; 
   }
 
-.note-btn[disabled] {
+.noteBtn[disabled] {
     color: rgb(208, 204, 204);
 
 }
@@ -138,7 +138,7 @@ font-size: large;
     box-sizing: border-box;
   }
   
-  .records-main {
+  .recordsMain {
     overflow-y: auto; 
     height: 60vh; 
     padding: 10px; 
@@ -170,7 +170,7 @@ font-size: large;
     margin-bottom: 5px;
   }
 
-  .record .note-created-at{
+  .record .noteCreatedAt{
 align-self: flex-end;
    font-size: 0.7rem;
 margin-bottom: 0;
@@ -195,19 +195,19 @@ img{
     background-repeat: no-repeat;
     background-size: 450px;
 }
-.content-heading{
+.contentHeading{
     font-size: xx-large;
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
-.content-end{
+.contentEnd{
     margin-top: 120px;
 }
-.content-end:hover{
+.contentEnd:hover{
     text-decoration:underline;
 cursor: pointer;
 }
-.content-end{
+.contentEnd{
 position: absolute;
 bottom: -42%;
 }  
