@@ -41,8 +41,8 @@ return (
       </>
     )}
     {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
-    </Router>
-       <ToastContainer
+
+             <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
@@ -50,8 +50,9 @@ return (
         pauseOnHover
         theme="light"
        />
-    </div>
-  );
+    </Router>
+  </div>
+);
 }
 
 export default App;
