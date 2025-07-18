@@ -233,50 +233,69 @@ li a.active {
 }
 
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
+  .heading {
+    margin: 10% auto 5% auto;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    position: static; /* Remove fixed position */
+  }
 
-li a {
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-radius: 8px;
-  background-color: white;
-  height: auto;
+  .groupNames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .groupName {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .circleName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .groupName h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .group-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #1e008a;
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    z-index: 10;
+  }
 }
 
-.circle-name {
-  width: 42px;
-  height: 42px;
-  font-size: 1rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  flex-shrink: 0;
-}
-
-h3 {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin: 0;
-  position: static;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-  background-color: white;
-  padding: 10px;
-  border-radius: 8px;
-}
-  
