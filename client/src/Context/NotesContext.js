@@ -33,37 +33,13 @@ const NotesContext = ({ children }) => {
     storedId = crypto.randomUUID(); 
     localStorage.setItem("userId", storedId);
     
-    localStorage.removeItem("groups");
-    localStorage.removeItem("notes");
-    localStorage.removeItem("selectedGroup");
-
     setGroups([]);
     setNotes([]);
     setSelectedGroup(null);
     return;
   }
-
-  const storedGroups = localStorage.getItem("groups");
-  const storedNotes = localStorage.getItem("notes");
-  const storedSelectedGroup = localStorage.getItem("selectedGroup");
-
-  if (storedGroups) {
-    setGroups(JSON.parse(storedGroups));
-  } else {
     getGroups();
-  }
-
-  if (storedNotes) {
-    setNotes(JSON.parse(storedNotes));
-  }
-
-  if (storedSelectedGroup) {
-    const group = JSON.parse(storedSelectedGroup);
-    setSelectedGroup(group);
-    getNotes(group._id);
-  }
   }, []);
-
 
   const createGroup = async (name,color) => {
     try {
