@@ -101,7 +101,12 @@ const NotesContext = ({ children }) => {
 
   const createNote = async (noteData) => {
     try {
-     const response= await axios.post(`https://pocket-notes-react-project-backend.onrender.com/api/notes`,  noteData, userId ); 
+     const response= await axios.post(`https://pocket-notes-react-project-backend.onrender.com/api/notes`,  
+     {
+       info: noteData.info,
+       groupId: noteData.groupId,
+       userId: userId,
+     });
       setNotes([...notes, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
