@@ -94,7 +94,8 @@ const NotesContext = ({ children }) => {
     } else {
       setNotes([]);
     }
-  }, []);
+  }, [userId]);
+  
   useEffect(() => {
     getGroups();
   }, [getGroups]);
