@@ -64,7 +64,7 @@ const PostGroup = ({ onClose }) => {
         />
           <div>
     <h4>Choose colour</h4>
-    <div className={styles.color-palette}>
+    <div className={styles.colorPalette}>
       {colorOptions.map((color) => (
         <div
           key={color}
@@ -75,7 +75,7 @@ const PostGroup = ({ onClose }) => {
       ))}
     </div>
   </div>
-        <div className={style.popup-buttons}>
+        <div className={style.popupButtons}>
           <button onClick={handleCreate}>Create</button>
           <button onClick={onClose}>✕</button>
         </div>
