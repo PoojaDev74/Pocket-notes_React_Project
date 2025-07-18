@@ -11,17 +11,20 @@ const NotesContext = ({ children }) => {
 
   const getGroups = useCallback(async () => { 
     try {
-      const response = await axios.get('https://pocket-notes-react-project-backend.onrender.com/api/groups');
+      const response = await axios.get('https://pocket-notes-react-project-backend.onrender.com/api/groups?userId=${userId}');
       setGroups(response.data);
     } catch (error) {
       console.error('Error fetching groups:', error);
     }
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
-  const firstVisit = localStorage.getItem("firstVisit");
+  let storedId = localStorage.getItem("userId");
 
-  if (!firstVisit) {
+  if (!storedId) {
+    storedId = crypto.randomUUID(); // or use uuid()
+    localStorage.setItem("userId", storedId);
+    
     localStorage.removeItem("groups");
     localStorage.removeItem("notes");
     localStorage.removeItem("selectedGroup");
@@ -29,8 +32,6 @@ const NotesContext = ({ children }) => {
     setGroups([]);
     setNotes([]);
     setSelectedGroup(null);
-
-    localStorage.setItem("firstVisit", "true");
     return;
   }
 
@@ -58,23 +59,12 @@ const NotesContext = ({ children }) => {
 
   const createGroup = async (name,color) => {
     try {
-      const response = await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/groups', { name , color });
+      const response = await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/groups', { name , color, userId });
       getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
       console.error('Error creating group:', error.response?.data?.error || error.message);
       
-    }
-  };
-
-  const deleteGroup = async(groupId) =>{
-    try {
-      await axios.delete(`https://pocketnotes-app-backend.onrender.com/api/groups/${groupId}`);
-      getGroups(); 
-      setSelectedGroup(null); 
-    } catch (error) {
-      console.error('Error deleting group:', error.response?.data?.error || error.message);
-    
     }
   };
 
@@ -97,7 +87,7 @@ const NotesContext = ({ children }) => {
 
   const createNote = async (noteData) => {
     try {
-     const response= await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/notes',  noteData ); 
+     const response= await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/notes',  noteData, userId ); 
       setNotes([...notes, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
@@ -117,14 +107,6 @@ const NotesContext = ({ children }) => {
     setSelectedGroup(group);
     getNotes(group?._id);
   };
-
-  // Fetch groups on initial component mount
-  // useEffect(() => {
-  //   getGroups();
-  // }, []);
-
-
-
 
   // ---------------------LOCAL STORAGE---------------//
 
@@ -180,7 +162,6 @@ const NotesContext = ({ children }) => {
         setGroups,
         getGroups,
         createGroup,
-        deleteGroup,
         getNotes,
         createNote,
         toggleNewGroupPopup,
