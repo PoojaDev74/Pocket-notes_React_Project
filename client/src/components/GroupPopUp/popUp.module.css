@@ -95,7 +95,7 @@
   }
   
   
-  .popupButtons :last-child {
+  .popupButtons button:last-child {
     background-color: #f44336;
     color: white;
   }
