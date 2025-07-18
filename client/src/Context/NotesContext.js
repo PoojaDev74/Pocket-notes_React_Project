@@ -22,7 +22,7 @@ const NotesContext = ({ children }) => {
   let storedId = localStorage.getItem("userId");
 
   if (!storedId) {
-    storedId = crypto.randomUUID(); // or use uuid()
+    storedId = crypto.randomUUID(); 
     localStorage.setItem("userId", storedId);
     
     localStorage.removeItem("groups");
@@ -71,7 +71,12 @@ const NotesContext = ({ children }) => {
   const getNotes = useCallback(async (groupId) => {
     if (groupId) {
       try {
-        const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group?groupId=${groupId}`); 
+        const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group}`,
+          params: {
+          groupId,
+          userId
+        }
+      }); 
         setNotes(response.data);
       } catch (error) {
         console.error('Error fetching notes:', error);
@@ -168,6 +173,7 @@ const NotesContext = ({ children }) => {
         newGroupPopupVisible, 
         selectGroup,
         selectedGroup, 
+        userrId
       }}
     >
       {children}
