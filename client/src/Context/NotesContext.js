@@ -79,7 +79,8 @@ const NotesContext = ({ children }) => {
   const getNotes = useCallback(async (groupId) => {
     if (groupId) {
       try {
-        const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group}`,
+        const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group`,
+        {
           params: {
           groupId,
           userId
