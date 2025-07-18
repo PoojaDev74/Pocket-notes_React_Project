@@ -52,8 +52,8 @@ const PostGroup = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className={styles.create-group-popup-overlay}>
-      <div className={styles.create-group-popup} ref={popupRef} >
+    <div className={`${styles.group} ${styles.popup{ ${styles.overlay}`}>
+      <div className={`${styles.group} ${styles.-popup}`} ref={popupRef} >
         <h3>Create New Group</h3>
         <h4>Group Name</h4>
         <input
