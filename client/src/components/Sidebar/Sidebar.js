@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Sidebar.module.css";
+import styles from "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
 import { Link } from "react-router-dom";
 
@@ -49,7 +49,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                       onClick={() => selectGroup(group)}
                     >
                       <div
-                        className={styles.circle-name}
+                        className={styles.circleName}
                         style={{ backgroundColor: group.color }}
                       >
                         {trimGroupName(group.name)}
@@ -67,7 +67,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                         onClick={() => selectGroup(group)}
                       >
                         <div
-                          className={styles.circle-name}
+                          className={styles.circleName}
                           style={{ backgroundColor: group.color }}
                         >
                           {trimGroupName(group.name)}
@@ -79,7 +79,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                 </li>
               ))
             ) : null}
-            <button className={styles.group-btn} onClick={handlePlusClick}>
+            <button className={styles.groupBtn} onClick={handlePlusClick}>
               +
             </button>
           </ul>
