@@ -11,7 +11,7 @@ const NotesContext = ({ children }) => {
 
   const getGroups = useCallback(async () => { 
     try {
-      const response = await axios.get('https://pocketnotes-app-backend.onrender.com/api/groups');
+      const response = await axios.get('https://pocket-notes-react-project-backend.onrender.com/api/groups');
       setGroups(response.data);
     } catch (error) {
       console.error('Error fetching groups:', error);
@@ -58,7 +58,7 @@ const NotesContext = ({ children }) => {
 
   const createGroup = async (name,color) => {
     try {
-      const response = await axios.post('https://pocketnotes-app-backend.onrender.com/api/groups', { name , color });
+      const response = await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/groups', { name , color });
       getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
@@ -81,7 +81,7 @@ const NotesContext = ({ children }) => {
   const getNotes = useCallback(async (groupId) => {
     if (groupId) {
       try {
-        const response = await axios.get(`https://pocketnotes-app-backend.onrender.com/api/group?groupId=${groupId}`); 
+        const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group?groupId=${groupId}`); 
         setNotes(response.data);
       } catch (error) {
         console.error('Error fetching notes:', error);
@@ -97,7 +97,7 @@ const NotesContext = ({ children }) => {
 
   const createNote = async (noteData) => {
     try {
-     const response= await axios.post('https://pocketnotes-app-backend.onrender.com/api/notes',  noteData ); 
+     const response= await axios.post('https://pocket-notes-react-project-backend.onrender.com/api/notes',  noteData ); 
       setNotes([...notes, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
