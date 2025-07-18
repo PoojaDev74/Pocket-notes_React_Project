@@ -37,7 +37,7 @@ const createNotes = async(req,res)=>{
 const getGroups = async(req,res)=>{
  const { userId } = req.query;
   try {
-    const groups = await Group.find({ userId });
+    const groups = await Groups.find({ userId });
     res.status(200).json(groups);
   } catch (err) {
     res.status(500).json({ error: 'Error fetching groups' });
