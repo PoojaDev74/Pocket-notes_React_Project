@@ -29,7 +29,7 @@ padding: 0%;
     
   }
   
-  .circle-name {
+  .circleName {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,19 +45,8 @@ padding: 0%;
     /* margin: 10;  */
     max-width: 60%;
   }
-  .navbar .btn2 {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.1rem; 
-    cursor: pointer;
-    position: absolute;
-    right: 3%; 
-  }
+
 /* -----------------NOTES SECTION---------------- */
-
-
-
 .noteContainer {
     display: flex;
     align-items: center;
@@ -98,11 +87,11 @@ textarea:focus {
     outline: none;
   }
 
-  .noteInput::placeholder{
-position: absolute;
-top: 10%;
-font-size: large;
-  }
+.noteInput::placeholder{
+  position: absolute;
+  top: 10%;
+  font-size: large;
+}
 .noteBtn{
   background-color: transparent;
   border: none;
@@ -117,7 +106,6 @@ font-size: large;
   min-height: 40px;
   position: absolute;
   left: 94%;
-
 }
 .noteBtn:not([disabled]) {
     color: #001F8B;
@@ -126,7 +114,6 @@ font-size: large;
 
 .noteBtn[disabled] {
     color: rgb(208, 204, 204);
-
 }
 
 .records {
@@ -171,16 +158,16 @@ font-size: large;
   }
 
   .record .noteCreatedAt{
-align-self: flex-end;
+   align-self: flex-end;
    font-size: 0.7rem;
-margin-bottom: 0;
+   margin-bottom: 0;
    font-weight: 500;
 }
 
 
 
 /* -----------Background Image--------------- */
- .content-img{
+ .contentImg{
   display: flex;
 align-items: center;
 justify-content: center;
@@ -217,9 +204,6 @@ i{
 } 
 
 
-
-
-
 @media (max-width:500px) {
   .content{
     width: 100vw;
@@ -231,25 +215,25 @@ i{
     height: 7%;
   }
 
-  .nav-heading {
+  .navHeading {
     font-size: 1.7rem;
     letter-spacing: 1px;
     font-weight: 400;
 position: absolute;
 left: 23%;
   }
-  .back-arrow-link i{
+  .backArrowLink i{
     color: white;
     font-size: 1.1rem;
   }
-  .circle-name {
+  .circleName {
     font-size: 1rem;
     color: white;
     position: absolute;
     left: 5%;
   }
   
-  .note-container {
+  .noteContainer {
     width: 100vw;
     /* min-height: auto;  */
     position: relative;
@@ -257,7 +241,7 @@ left: 23%;
     height: 22vh;
 }
 
-.new-note-input{
+.newNoteInput{
     display: flex;
     align-items: center; 
     justify-content: space-between; 
@@ -272,7 +256,7 @@ left: 23%;
 position: absolute;
   }
 
-.note-btn{
+.noteBtn{
   position: absolute;
   left: 84%;
 }
