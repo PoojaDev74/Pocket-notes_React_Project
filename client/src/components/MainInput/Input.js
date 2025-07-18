@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify"; 
 import { Data } from "../../Context/NotesContext";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
-import "./Input.css";
+import "./Input.module.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
 // --------------Input Section------------------
