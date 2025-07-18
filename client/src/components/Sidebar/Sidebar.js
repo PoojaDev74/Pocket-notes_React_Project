@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Sidebar.css";
+import "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
 import { Link } from "react-router-dom";
 
