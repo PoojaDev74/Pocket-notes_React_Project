@@ -47,7 +47,7 @@ const NotesContext = ({ children }) => {
   const createGroup = async (name,color) => {
     try {
       const response = await axios.post(`https://pocket-notes-react-project-backend.onrender.com/api/groups`, { name , color, userId });
-      await getGroups(); 
+      getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
       console.error("Error creating group:", error.response?.data?.error || error.message);      
@@ -97,7 +97,7 @@ const NotesContext = ({ children }) => {
     if (event) { 
       event.stopPropagation();
     }
-    setNewGroupPopupVisible(!prev => {
+    setNewGroupPopupVisible(prev => {
       console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !prev);
       return !prev;
     });
