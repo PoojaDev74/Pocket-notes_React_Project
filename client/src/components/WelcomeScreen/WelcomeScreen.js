@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundImage from '../../Assets/background-image.png';
-import './WelcomeScreen.module.css';
+import styles from './WelcomeScreen.module.css';
 
 const WelcomeScreen = () => {
   return (
