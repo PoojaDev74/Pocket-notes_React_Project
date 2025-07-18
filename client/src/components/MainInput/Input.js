@@ -129,7 +129,7 @@ const Input = () => {
 
           {/* --------------Notes List-------------- */}
           <div className={styles.records}>
-            <div className={styles.records-main}>
+            <div className={styles.recordsMain}>
               {notes
                 .filter((note) => note.groupId === group._id)
                 .map((item) => (
