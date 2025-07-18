@@ -8,13 +8,21 @@ const NotesContext = ({ children }) => {
   const [selectedGroup, setSelectedGroup] = useState(null); 
   const [newGroupPopupVisible, setNewGroupPopupVisible] = useState(false);
 
+    const [userId] = useState(() => {
+    let storedId = localStorage.getItem("userId");
+    if (!storedId) {
+      storedId = crypto.randomUUID(); // Or use uuid() from 'uuid'
+      localStorage.setItem("userId", storedId);
+    }
+    return storedId;
+  });
 
   const getGroups = useCallback(async () => { 
     try {
       const response = await axios.get('https://pocket-notes-react-project-backend.onrender.com/api/groups?userId=${userId}');
       setGroups(response.data);
     } catch (error) {
-      console.error('Error fetching groups:', error);
+      console.error("Error fetching groups:", error);
     }
   }, [userId]);
 
@@ -63,7 +71,7 @@ const NotesContext = ({ children }) => {
       getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
-      console.error('Error creating group:', error.response?.data?.error || error.message);
+      console.error("Error creating group:", error.response?.data?.error || error.message);
       
     }
   };
@@ -79,7 +87,7 @@ const NotesContext = ({ children }) => {
       }); 
         setNotes(response.data);
       } catch (error) {
-        console.error('Error fetching notes:', error);
+        console.error("Error fetching notes:", error);
         setNotes([]);
       }
     } else {
@@ -96,7 +104,7 @@ const NotesContext = ({ children }) => {
       setNotes([...notes, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
-      console.error('Error creating note:', error);
+      console.error("Error creating note:", error);
     }
   };
 
