@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify"; 
 import { Data } from "../../Context/NotesContext";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
-import "./Input.module.css";
+import styles from "./Input.module.css";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
 // --------------Input Section------------------
@@ -122,7 +122,7 @@ const Input = () => {
                 >
                   {trimGroupName(group.name)}
                 </div>
-                <h3 className={styles.nav-heading}>{group.name}</h3>
+                <h3 className={styles.navHeading}>{group.name}</h3>
               </div>
             )}
           </div>
@@ -136,7 +136,7 @@ const Input = () => {
                   <div className={styles.record} key={item._id}>
                     <p>{item.info}</p>
                     {item.createdAt && (
-                      <p className={styles.note-created-at}>
+                      <p className={styles.noteCreatedAt}>
                         {formatDateForDisplay(item.createdAt)}
                       </p>
                     )}
@@ -149,17 +149,17 @@ const Input = () => {
           </div>
 
           {/* --------------Note Input-------------- */}
-          <div className={styles.note-container}>
-            <div className={styles.new-note-input}>
+          <div className={styles.noteContainer}>
+            <div className={styles.newNoteInput}>
               <textarea
                 value={newNoteInput}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
                 placeholder="Enter your text here..."
-                className="note-input"
+                className={styles.noteInput}
               />
               <button
-                className={`${styles.note-btn} ${newNoteInput.trim() ? styles.active : styles.disabled}`}
+                className={`${styles.noteBtn} ${newNoteInput.trim() ? styles.active : styles.disabled}`}
                 onClick={handleCreateNote}
                 disabled={!newNoteInput.trim()}
               >
