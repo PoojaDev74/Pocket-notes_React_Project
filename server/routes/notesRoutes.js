@@ -6,7 +6,7 @@ const Group = require("../models/groupModel");
 const router = express.Router();
 
 //Require Controller
-const {getNotesByGroup,createNotes ,getGroups,createGroup,deleteGroup}=  require("../controllers/notesController")
+const {getNotesByGroup,createNotes ,getGroups,createGroup}=  require("../controllers/notesController")
 
 //GET Note Data by groupId
 router.get("/group", getNotesByGroup );
@@ -20,8 +20,5 @@ router.get("/groups", getGroups)
 
 //Post Group Data
 router.post("/groups", createGroup)
-
-//Delete Group 
-router.delete("/groups/:id",deleteGroup);
 
 module.exports = router;
