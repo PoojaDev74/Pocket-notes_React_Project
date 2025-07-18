@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
 const groupSchema = mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
-        unique: true,
-    },
-    color:{
-        type: String,
-        default: '#a879ff'
-    },
-    createdAt :{
-        type:Date,
-        default: Date.now,
-    },
+name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  color: {
+    type: String,
+    default: "#a879ff",
+  },
+  userId: {
+    type: String,
+    required: true,
+  }
 },{timestamps:true});
 
 const Groups = mongoose.model("Groups", groupSchema);
