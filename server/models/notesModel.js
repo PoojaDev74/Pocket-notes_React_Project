@@ -1,18 +1,19 @@
 const mongoose = require("mongoose");
 
 const NoteSchema = mongoose.Schema({
-    info:{
+  info:{
         type:String,
         required: true,
     },
-    groupId: {
-        type: String,
-        required: true,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-      },
+  groupId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Groups",
+    required: true
+  }, 
+  userId: {
+    type: String,
+    required: true
+  },
   
 },{timestamps:true});
 
