@@ -7,7 +7,7 @@ const WelcomeScreen = () => {
     <div className={styles.welcome-section}>
     <div className={styles.welcome-screen}>
       <img src={backgroundImage} alt="Pocket Notes Background" />
-     <div className="empty-state">
+     <div className={styles.empty-state}>
       <h2>Pocket Notes</h2>
       <p>Send and receive messages without keeping your phone online.</p>
       <p>Use Pocket Notes on up to 4 linked devices and 1 mobile phone.</p>
