@@ -68,7 +68,7 @@ const PostGroup = ({ onClose }) => {
       {colorOptions.map((color) => (
         <div
           key={color}
-          className={`${styles.color-circle} ${selectedColor === color ? styles.selected : ''}`}
+          className={`${styles.colorCircle} ${selectedColor === color ? styles.selected : ''}`}
           style={{ backgroundColor: color }}
           onClick={() =>handleColorSelect(color)}
         ></div>
