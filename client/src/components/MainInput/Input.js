@@ -170,9 +170,8 @@ const Input = () => {
         </>
       ) : (
         // --------------Default Welcome Screen (Desktop)--------------
-       {!selectedGroup &&  !isMobile && (
+       !selectedGroup &&  !isMobile && 
             <WelcomeScreen />
-        )
       )}
     </div>
   );
