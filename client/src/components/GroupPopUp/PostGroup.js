@@ -75,7 +75,7 @@ const PostGroup = ({ onClose }) => {
       ))}
     </div>
   </div>
-        <div className={style.popupButtons}>
+        <div className={styles.popupButtons}>
           <button onClick={handleCreate}>Create</button>
           <button onClick={onClose}>✕</button>
         </div>
