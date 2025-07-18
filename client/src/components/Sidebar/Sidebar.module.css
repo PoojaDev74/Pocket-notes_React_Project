@@ -79,7 +79,7 @@ a {
     height: auto; 
 }
 
-.circle-name{
+.circleName{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +95,7 @@ h3{
     font-size: 1.1rem;
 
 }
-.group-btn{
+.groupBtn{
     position: fixed;
      bottom: 5%;
     left: 14%; 
@@ -128,7 +128,7 @@ h3{
         height: 100vh;
         padding-bottom: 30px;
     }
-    .group-btn{
+    .groupBtn{
         position: fixed;
          left: 20%;
         }
@@ -195,7 +195,7 @@ li a.active {
         justify-content: flex-start;
 
     }
-    .circle-name {
+    .circleName {
         width: 38px;
         height: 38px;
         font-size: 1.5rem;
@@ -210,7 +210,7 @@ li a.active {
         left: 20%;
     }
 
-    .group-btn {
+    .groupBtn {
         position: fixed;
         bottom: 40px;
         right: 45px; 
