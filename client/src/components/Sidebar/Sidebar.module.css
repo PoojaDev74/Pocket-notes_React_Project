@@ -5,20 +5,20 @@
 }
 
 .container{
-    display: flex
+    display: flex;
 
 }
 /* -------sidebar-------- */
 .sidebar{
     width: 20vw;
     height: 100vh;
-scrollbar-width:thin;
-scroll-behavior: smooth;
-overflow-y: auto; 
-display: flex;
-flex-direction: column;
-align-items: center;
-position: relative;
+    scrollbar-width:thin;
+    scroll-behavior: smooth;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 .heading{
@@ -48,39 +48,25 @@ ul {
     margin: 0;
     width: 100%;
     height: auto;
-
+    list-style: none;
 }
 
 li a {
-  display: flex;
-  align-items: center;
   background-color: white;
   padding: 12px 16px;
-  gap: 12px;
   border-radius: 12px;
-  text-decoration: none;
   color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   transition: background-color 0.2s ease-in-out;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
  
 li a.active {
-background-color: rgb(217, 214, 214);
-color: black;
-}
-a {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    border-radius: 10px;
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
-    background-color: #16008B;
-    padding: 10px 15px; 
-    height: auto; 
+  background-color: rgb(217, 214, 214);
+  color: black;
 }
 
 .circleName{
@@ -97,49 +83,42 @@ a {
 }
 
 h3{
-    margin-top: 0px;
-    font-size: 1.1rem;
-
+  position: static;
+  margin: 0;
 }
 
-.groupBtn{
-    position: fixed;
-    bottom: 5%;
-    left: 14%; 
-    font-size: 3em;
-    color: white;
-    background-color: #16008B;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
+.groupBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-size: 2.5em;
+  color: white;
+  background-color: #16008B;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
-
 
 
 /* Mobile-specific styles */
 
 @media (max-width: 1150px) {
     .heading {
-    margin-bottom: 20px;
         font-size: 1.9rem;
-       position: fixed;
     }
     .sidebar{
         width:27vw;
-        height: 100vh;
         padding-bottom: 30px;
     }
     .groupBtn{
-        position: fixed;
          left: 20%;
-        }
-
+     }
 }
 
 @media (max-width: 700px) {
@@ -151,9 +130,6 @@ h3{
         width: 100vw;
         height: 100vh; 
         position: relative; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
         padding-bottom: 60px;
         overflow-y: auto;
         order: 1;
@@ -171,38 +147,13 @@ h3{
         flex: 1; 
     }
 
-    ul {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch; 
-        gap: 13px;
-        list-style: none;
-
-    }
-
      li a {
         padding: 12px 20px;
         gap: 1%;
         border-radius: 12px;
-        cursor: pointer;
-        background-color: white; 
-        height: auto;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
      } 
-     
-li a.active {
-    background-color: rgb(217, 214, 214);
-    color: black;
-  }
-    a{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-
-    }
+    
     .circleName {
         width: 38px;
         height: 38px;
@@ -211,26 +162,9 @@ li a.active {
     }
 
     h3 {
-        font-size: 1rem;
-        font-weight:500;
-        letter-spacing: 2px;
-        position:absolute;
-        left: 20%;
+     position: static;
+     margin: 0;
     }
-
-  .group-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    font-size: 2.5rem;
-    background-color: #16008B;
-    color: white;
-    border-radius: 50%;
-    z-index: 1000;
-  }
-}
 
 
 @media (max-width: 500px) {
@@ -239,11 +173,10 @@ li a.active {
     font-size: 2rem;
     text-align: center;
     font-weight: 600;
-    position: static; /* Remove fixed position */
+    position: static; 
   }
 
   .groupNames {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
@@ -262,12 +195,6 @@ li a.active {
   }
 
   .circleName {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
     margin-right: 1rem;
@@ -279,23 +206,6 @@ li a.active {
     font-weight: 500;
     margin: 0;
     letter-spacing: 0.5px;
-  }
-
-  .group-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    background-color: #1e008a;
-    color: white;
-    border-radius: 50%;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    z-index: 10;
   }
 }
 
