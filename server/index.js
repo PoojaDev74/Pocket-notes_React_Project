@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 app.use(express.json());
 
 const allowedOrigins = [
-  "https://pocketnotes-app-frontend.onrender.com",
+  "https://pocket-notes-react-project-frontend.onrender.com",
   "http://localhost:3000"
 ];
 
