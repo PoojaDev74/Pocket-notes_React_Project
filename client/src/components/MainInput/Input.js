@@ -103,21 +103,21 @@ const Input = () => {
           <div className={styles.navbar}>
             {isMobile ? (
               <div className={styles.Nav1}>
-                <Link to="/" className={styles.back-arrow-link}>
+                <Link to="/" className={styles.backArrowLink}>
                   <i className="fa-solid fa-arrow-left"></i>
                 </Link>
                 <div
-                  className={styles.circle-name}
+                  className={styles.circleName}
                   style={{ backgroundColor: group.color }}
                 >
                   {trimGroupName(group.name)}
                 </div>
-                <h3 className={styles.nav-heading}>{group.name}</h3>
+                <h3 className={styles.navHeading}>{group.name}</h3>
               </div>
             ) : (
               <div className={styles.nav}>
                 <div
-                  className={styles.circle-name}
+                  className={styles.circleName}
                   style={{ backgroundColor: group.color }}
                 >
                   {trimGroupName(group.name)}
