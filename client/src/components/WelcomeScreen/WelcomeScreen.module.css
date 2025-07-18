@@ -1,4 +1,4 @@
-.welcome-section {
+.welcomeSection {
   flex: 1;
   background-color: #DAE5F5;
   display: flex;
@@ -7,23 +7,23 @@
   overflow-y: auto;
 }
 
-.empty-state {
+.emptyState {
   margin: auto;
   text-align: center;
 }
 
-.empty-state h2 {
+.emptyState h2 {
   font-size: 32px;
   color: #333333;
   margin-bottom: 10px;
 }
 
-.empty-state p {
+.emptyState p {
   font-size: 18px;
   color: #666666;
 }
 
-.welcome-screen {
+.welcomeScreen {
   flex: 1;
   padding: 60px;
   background-position: 50%;
