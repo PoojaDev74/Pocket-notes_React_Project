@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { Data } from '../../Context/NotesContext';
-import "./popUp.module.css"
+import styles from "./popUp.module.css"
 const PostGroup = ({ onClose }) => {
   const { createGroup, groups } = useContext(Data);
   const [groupName, setGroupName] = useState('');
