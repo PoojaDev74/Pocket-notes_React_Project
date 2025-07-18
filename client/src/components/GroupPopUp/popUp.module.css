@@ -72,8 +72,8 @@
     transition: border 0.2s ease, transform 0.2s ease;
   }
   
-  .colorCircle.selected {
-    border: 2px solid #333;
+  .selected {
+    border: 2px solid black;
   }
   
   .popupButtons {
