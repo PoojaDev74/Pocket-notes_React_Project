@@ -96,47 +96,47 @@ const Input = () => {
   const group = isMobile ? currentGroup : selectedGroup;
 
   return (
-    <div className="content">
+    <div className={styles.content}>
       {group ? (
         <>
           {/* --------------Header / Navbar-------------- */}
-          <div className="navbar">
+          <div className={styles.navbar}>
             {isMobile ? (
-              <div className="Nav1">
-                <Link to="/" className="back-arrow-link">
+              <div className={styles.Nav1}>
+                <Link to="/" className={styles.back-arrow-link}>
                   <i className="fa-solid fa-arrow-left"></i>
                 </Link>
                 <div
-                  className="circle-name"
+                  className={styles.circle-name}
                   style={{ backgroundColor: group.color }}
                 >
                   {trimGroupName(group.name)}
                 </div>
-                <h3 className="nav-heading">{group.name}</h3>
+                <h3 className={styles.nav-heading}>{group.name}</h3>
               </div>
             ) : (
-              <div className="nav">
+              <div className={styles.nav}>
                 <div
-                  className="circle-name"
+                  className={styles.circle-name}
                   style={{ backgroundColor: group.color }}
                 >
                   {trimGroupName(group.name)}
                 </div>
-                <h3 className="nav-heading">{group.name}</h3>
+                <h3 className={styles.nav-heading}>{group.name}</h3>
               </div>
             )}
           </div>
 
           {/* --------------Notes List-------------- */}
-          <div className="records">
-            <div className="records-main">
+          <div className={styles.records}>
+            <div className={styles.records-main}>
               {notes
                 .filter((note) => note.groupId === group._id)
                 .map((item) => (
-                  <div className="record" key={item._id}>
+                  <div className={styles.record} key={item._id}>
                     <p>{item.info}</p>
                     {item.createdAt && (
-                      <p className="note-created-at">
+                      <p className={styles.note-created-at}>
                         {formatDateForDisplay(item.createdAt)}
                       </p>
                     )}
@@ -149,8 +149,8 @@ const Input = () => {
           </div>
 
           {/* --------------Note Input-------------- */}
-          <div className="note-container">
-            <div className="new-note-input">
+          <div className={styles.note-container}>
+            <div className={styles.new-note-input}>
               <textarea
                 value={newNoteInput}
                 onChange={handleInputChange}
@@ -159,7 +159,7 @@ const Input = () => {
                 className="note-input"
               />
               <button
-                className={`note-btn ${newNoteInput.trim() ? "active" : "disabled"}`}
+                className={`${styles.note-btn} ${newNoteInput.trim() ? styles.active : styles.disabled}`}
                 onClick={handleCreateNote}
                 disabled={!newNoteInput.trim()}
               >
