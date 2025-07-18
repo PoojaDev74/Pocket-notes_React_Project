@@ -182,7 +182,7 @@ const NotesContext = ({ children }) => {
         newGroupPopupVisible, 
         selectGroup,
         selectedGroup, 
-        userrId
+        userId
       }}
     >
       {children}
