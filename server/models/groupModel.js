@@ -16,6 +16,8 @@ name: {
   }
 },{timestamps:true});
 
+groupSchema.index({ name: 1, userId: 1 }, { unique: true });
+
 const Groups = mongoose.model("Groups", groupSchema);
 
 module.exports = Groups;
