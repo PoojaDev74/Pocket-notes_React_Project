@@ -6,12 +6,13 @@ const PostGroup = ({ onClose }) => {
   const { createGroup, groups } = useContext(Data);
   const [groupName, setGroupName] = useState('');
   const popupRef = useRef(null);
-  const [selectedColor, setSelectedColor] = useState('#a879ff');
+  const [selectedColor, setSelectedColor] = useState("");
 
 
   const colorOptions = ['#a879ff', '#ff80bf', '#80f0ff', '#ffaa80', '#007bff', '#6691FF'];
   
   const handleColorSelect = (color) => {
+     console.log("Selected:", color);
     setSelectedColor(color);
   };
 
