@@ -52,8 +52,8 @@ const PostGroup = ({ onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="styles.create-group-popup-overlay" >
-      <div className="styles.create-group-popup" ref={popupRef} >
+    <div className={styles.create-group-popup-overlay}>
+      <div className={styles.create-group-popup} ref={popupRef} >
         <h3>Create New Group</h3>
         <h4>Group Name</h4>
         <input
@@ -64,18 +64,18 @@ const PostGroup = ({ onClose }) => {
         />
           <div>
     <h4>Choose colour</h4>
-    <div className="styles.color-palette">
+    <div className={styles.color-palette}>
       {colorOptions.map((color) => (
         <div
           key={color}
-          className={`${styles.color-circle} ${selectedColor === color ? 'styles.selected' : ''}`}
+          className={`${styles.color-circle} ${selectedColor === color ? styles.selected : ''}`}
           style={{ backgroundColor: color }}
           onClick={() =>handleColorSelect(color)}
         ></div>
       ))}
     </div>
   </div>
-        <div className="style.popup-buttons">
+        <div className={style.popup-buttons}>
           <button onClick={handleCreate}>Create</button>
           <button onClick={onClose}>✕</button>
         </div>
