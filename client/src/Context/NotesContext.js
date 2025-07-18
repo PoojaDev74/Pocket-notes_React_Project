@@ -19,7 +19,10 @@ const NotesContext = ({ children }) => {
 
   const getGroups = useCallback(async () => { 
     try {
-      const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/groups?userId=${userId}`);
+      const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/groups`,
+      {
+        params: {userId}
+      });
       setGroups(response.data);
     } catch (error) {
       console.error("Error fetching groups:", error);
@@ -44,11 +47,10 @@ const NotesContext = ({ children }) => {
   const createGroup = async (name,color) => {
     try {
       const response = await axios.post(`https://pocket-notes-react-project-backend.onrender.com/api/groups`, { name , color, userId });
-      getGroups(); 
+      await getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
-      console.error("Error creating group:", error.response?.data?.error || error.message);
-      
+      console.error("Error creating group:", error.response?.data?.error || error.message);      
     }
   };
 
@@ -92,41 +94,35 @@ const NotesContext = ({ children }) => {
   };
 
   const toggleNewGroupPopup = (event) => {
-    console.log('toggleNewGroupPopup called')
     if (event) { 
       event.stopPropagation();
     }
-    setNewGroupPopupVisible(!newGroupPopupVisible);
-    console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !newGroupPopupVisible);
+    setNewGroupPopupVisible(!prev => {
+      console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !prev);
+      return !prev;
+    });
   };
+  
   const selectGroup = (group) => {
     setSelectedGroup(group);
-    getNotes(group?._id);
   };
 
   // ---------------------LOCAL STORAGE---------------//
 
   useEffect(() => {
-    const storedGroups = localStorage.getItem("groups");
-    const storedNotes = localStorage.getItem("notes");
-    const storedSelectedGroup = localStorage.getItem("selectedGroup");
+   const storedGroup = localStorage.getItem("selectedGroup");
+    if (storedGroup) {
+    const group = JSON.parse(storedGroup);
+    setSelectedGroup(group);
+  }
+}, []);
   
-    if (storedGroups) {
-      setGroups(JSON.parse(storedGroups));
-    } else {
-      getGroups(); 
-    }
+useEffect(() => {
+  if (selectedGroup?._id) {
+    getNotes(selectedGroup._id);
+  }
+}, [selectedGroup, getNotes]);
   
-    if (storedNotes) {
-      setNotes(JSON.parse(storedNotes));
-    }
-  
-    if (storedSelectedGroup) {
-      const group = JSON.parse(storedSelectedGroup);
-      setSelectedGroup(group);
-      getNotes(group._id); 
-    }
-  }, []);
   useEffect(() => {
     if (selectedGroup) {
       localStorage.setItem("selectedGroup", JSON.stringify(selectedGroup));
@@ -140,7 +136,6 @@ const NotesContext = ({ children }) => {
       localStorage.setItem("notes", JSON.stringify(notes));
     }
   }, [notes]);
-  
 
   useEffect(() => {
     if (groups) {
