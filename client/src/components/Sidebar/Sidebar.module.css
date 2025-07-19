@@ -45,11 +45,12 @@
     letter-spacing: 1.5px;
 }
 .groupNames{
-  flex: 1;
-  overflow-y: auto;
-  margin-top: 80px;
-  width: 100%;
-  padding-bottom: 80px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 80px;
+    width: 100%;
     
 }
 
