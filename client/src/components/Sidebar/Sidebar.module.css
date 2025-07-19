@@ -102,10 +102,18 @@ li a.active {
   text-overflow: ellipsis;
 }
 
+.groupBtnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  bottom: 10px;
+  z-index: 10;
+  background-color: white;
+  padding-top: 1rem;
+}
+
 .groupBtn {
-  position: fixed;
-  bottom: 24px;
-  left: 14%;
   font-size: 2.5em;
   color: white;
   background-color: #16008B;
@@ -131,9 +139,6 @@ li a.active {
         width:27vw;
         padding-bottom: 30px;
     }
-    .groupBtn{
-         left: 20%;
-     }
 }
 
 @media (max-width: 700px) {
@@ -158,12 +163,6 @@ li a.active {
 
   .groupNames {
     margin-top: 0;
-  }
-
-  .groupBtn {
-    bottom: 24px;
-    right: 24px;
-    font-size: 2.5rem;
   }
 }
 
