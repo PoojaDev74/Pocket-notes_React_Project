@@ -35,6 +35,8 @@ const Sidebar = ({ showGroups, onStart }) => {
     <div className={styles.container}>
       <div className={styles.sidebar}>
         <h1 className={styles.heading}>Pocket Notes</h1>
+  
+      <div className={styles.sidebarContent}>
         <div className={styles.groupNames}>
           <ul>
             {groups && groups.length > 0 ? (
@@ -86,6 +88,7 @@ const Sidebar = ({ showGroups, onStart }) => {
          </button>
       </div>
     </div>
+   </div>
   );
 };
 
