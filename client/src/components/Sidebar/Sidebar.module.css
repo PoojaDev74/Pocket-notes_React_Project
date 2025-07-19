@@ -106,7 +106,7 @@ li a.active {
 
 .groupBtn {
     position: fixed;
-    bottom: 20px;
+    bottom: 5%;
     left: 14%;
     font-size: 2.5rem;
     color: white;
@@ -119,7 +119,6 @@ li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
 }
 
 
@@ -135,11 +134,8 @@ li a.active {
         padding-bottom: 100px;
     }
     .groupBtn{
-        bottom: 20px;
-        right: 20px;
-        font-size: 2.5rem;
-        width: 60px;
-        height: 60px;
+        position: fixed;
+         left: 20%;
      }
 }
 
@@ -172,11 +168,15 @@ li a.active {
   }
 
    .groupBtn {
-        width: 54px;
-        height: 54px;
-        font-size: 2.2rem;
-        bottom: 15px;
-        right: 15px;
+        position: fixed;
+        bottom: 40px;
+        right: 45px; 
+        left: auto;
+        font-size: 3.2rem;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        z-index: 1000; 
     } 
 }
 
