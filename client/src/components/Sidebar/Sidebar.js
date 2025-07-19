@@ -79,12 +79,12 @@ const Sidebar = ({ showGroups, onStart }) => {
                 </li>
               ))
             ) : null}
-              <button className={styles.groupBtn} onClick={handlePlusClick}>
-                +
-              </button>
           </ul>
         </div>
       </div>
+        <button className={styles.groupBtn} onClick={handlePlusClick}>
+          +
+        </button>
     </div>
   );
 };
