@@ -104,8 +104,8 @@ li a.active {
 
 .groupBtn {
     position: fixed;
-     bottom: 5%;
-    left: 14%; 
+    bottom: 5%;
+    left: 16%; 
     font-size: 2em;
     color: white;
     background-color: #16008B;
@@ -129,6 +129,7 @@ li a.active {
     }
     .sidebar{
         width:27vw;
+        height: 100vh;
         padding-bottom: 30px;
     }
     .groupBtn{
@@ -145,6 +146,10 @@ li a.active {
     .sidebar {
         width: 100vw;
         height: 100vh; 
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
         padding-bottom: 0 1rem 60px;
         overflow-y: auto;
         order: 1;
