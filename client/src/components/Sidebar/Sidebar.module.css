@@ -13,6 +13,7 @@
 .sidebar{
     width: 20vw;
     height: 100vh;
+    padding-bottom: 100px;
     scrollbar-width:thin;
     scroll-behavior: smooth;
     overflow-y: auto; 
@@ -104,8 +105,9 @@ li a.active {
 }
 
 .groupBtn {
-    position: sticky;
-    bottom: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     font-size: 2.5rem;
     color: white;
     background-color: #16008B;
@@ -117,8 +119,6 @@ li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     z-index: 10;
 }
 
@@ -132,23 +132,14 @@ li a.active {
     .sidebar{
         width:27vw;
         height: 100vh;
-        padding-bottom: 30px;
+        padding-bottom: 100px;
     }
     .groupBtn{
-        position: fixed;
-        bottom: 40px;
-        left: 20%;
+        bottom: 20px;
+        right: 20px;
+        font-size: 2.5rem;
         width: 60px;
         height: 60px;
-        font-size: 2.8rem;
-        background-color: #16008B;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
      }
 }
 
@@ -164,7 +155,7 @@ li a.active {
         display: flex;
         flex-direction: column;
         align-items: center; 
-        padding: 0 1rem 60px;
+        padding-bottom: 80px;
         overflow-y: auto;
         order: 1;
     }
@@ -181,14 +172,12 @@ li a.active {
   }
 
    .groupBtn {
-        position: fixed;
-        bottom: 40px;
-        right: 30px;
-        left: auto;
-        font-size: 3.2rem;
-        width: 68px;
-        height: 68px;
-        z-index: 1000;
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        font-size: 2.2rem;
+        bottom: 15px;
+        right: 15px;
     } 
 }
 
@@ -222,11 +211,11 @@ li a.active {
   }
     
   .groupBtn {
-    width: 60px;
-    height: 60px;
-    font-size: 2.8rem;
-    right: 20px;
-    bottom: 30px;
+        width: 52px;
+        height: 52px;
+        font-size: 2rem;
+        bottom: 12px;
+        right: 12px;
   }
 }
 
