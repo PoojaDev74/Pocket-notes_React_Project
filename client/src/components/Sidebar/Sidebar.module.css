@@ -19,20 +19,24 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    background-color: #f9f9f9
 }
 
 .heading{
     padding-top: 20px;
     letter-spacing: 2px;
     font-size: xx-large;
-    position: fixed;
+    position: sticky;
     font-weight: 500;
-
+    background-color: #f9f9f9;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    top: 0;
 }
 .groupNames{
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
     flex-direction: column;
     margin-top: 80px;
     width: 100%;
@@ -42,7 +46,6 @@
 ul {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     gap: 10px;
     padding: 0;
     margin: 0;
@@ -51,17 +54,24 @@ ul {
     list-style: none;
 }
 
-li a {
-  background-color: white;
-  padding: 12px 16px;
-  border-radius: 12px;
-  color: black;
-  text-decoration: none;
+.groupName {
   display: flex;
   align-items: center;
-  gap: 12px;
-  transition: background-color 0.2s ease-in-out;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border-radius: 16px;
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  margin: 0 auto;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: black;
+  gap: 1rem;
+}
+
+.groupName:hover {
+  background-color: #f1f1f1;
 }
  
 li a.active {
@@ -73,18 +83,23 @@ li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 50%;
     color: white;
     flex-shrink: 0;
 }
 
-h3{
-  position: static;
+.groupName h3 {
   margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .groupBtn {
@@ -129,83 +144,56 @@ h3{
     .sidebar {
         width: 100vw;
         height: 100vh; 
-        position: relative; 
-        padding-bottom: 60px;
+        padding-bottom: 0 1rem 60px;
         overflow-y: auto;
         order: 1;
     }
 
     .heading {
-        margin: 5% 20% 10% 10% ;
-        font-size: 2.5rem;
-        position: fixed; 
+      font-size: 2rem;
+      padding: 1.2rem;
+      position: static;
+      margin-bottom: 1rem;
     }
 
-    .groupNames {
-        margin-top: 20%; 
-        width: 90%; 
-        flex: 1; 
-    }
+  .groupNames {
+    margin-top: 0;
+  }
 
-     li a {
-        padding: 12px 20px;
-        gap: 1%;
-        border-radius: 12px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-     } 
-    
-    .circleName {
-        width: 38px;
-        height: 38px;
-        font-size: 1.5rem;
-
-    }
-
-    h3 {
-     position: static;
-     margin: 0;
-    }
+  .groupBtn {
+    bottom: 24px;
+    right: 24px;
+    font-size: 2.5rem;
+  }
+}
 
 
 @media (max-width: 500px) {
   .heading {
-    margin: 10% auto 5% auto;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
     font-weight: 600;
-    position: static; 
+    padding: 1.5rem 0;
   }
 
   .groupNames {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     width: 100%;
     padding: 0 1rem;
+    margin-top: 0;
   }
 
   .groupName {
-    display: flex;
-    align-items: center;
     width: 100%;
-    background-color: white;
-    border-radius: 12px;
     padding: 0.75rem 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-
-  .circleName {
-    width: 40px;
-    height: 40px;
-    margin-right: 1rem;
-    flex-shrink: 0;
+    border-radius: 16px;
   }
 
   .groupName h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0;
-    letter-spacing: 0.5px;
+    font-size: 0.95rem;
   }
 }
 
