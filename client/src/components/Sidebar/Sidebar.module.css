@@ -6,6 +6,7 @@
 
 .container{
     display: flex;
+    width: 100vw;
 
 }
 /* -------sidebar-------- */
@@ -103,21 +104,22 @@ li a.active {
 }
 
 .groupBtn {
-    position: fixed;
-    bottom: 5%;
-    left: 16%; 
-    font-size: 2em;
+    position: sticky;
+    bottom: 10px;
+    font-size: 2.5rem;
     color: white;
     background-color: #16008B;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    z-index: 10;
 }
 
 
@@ -133,8 +135,20 @@ li a.active {
         padding-bottom: 30px;
     }
     .groupBtn{
-         position: fixed;
-         left: 20%;
+        position: fixed;
+        bottom: 40px;
+        left: 20%;
+        width: 60px;
+        height: 60px;
+        font-size: 2.8rem;
+        background-color: #16008B;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
      }
 }
 
@@ -150,7 +164,7 @@ li a.active {
         display: flex;
         flex-direction: column;
         align-items: center; 
-        padding-bottom: 0 1rem 60px;
+        padding: 0 1rem 60px;
         overflow-y: auto;
         order: 1;
     }
@@ -169,13 +183,12 @@ li a.active {
    .groupBtn {
         position: fixed;
         bottom: 40px;
-        right: 45px; 
+        right: 30px;
         left: auto;
         font-size: 3.2rem;
         width: 68px;
         height: 68px;
-        border-radius: 50%;
-        z-index: 1000; 
+        z-index: 1000;
     } 
 }
 
@@ -206,6 +219,14 @@ li a.active {
 
   .groupName h3 {
     font-size: 0.95rem;
+  }
+    
+  .groupBtn {
+    width: 60px;
+    height: 60px;
+    font-size: 2.8rem;
+    right: 20px;
+    bottom: 30px;
   }
 }
 
