@@ -11,7 +11,6 @@ const Input = () => {
     groups,
     createNote,
     selectedGroup,
-    deleteGroup,
     notes,
   } = useContext(Data);
 
@@ -75,13 +74,6 @@ const Input = () => {
       e.preventDefault();
       handleCreateNote();
     }
-  };
-
-  // ------------------Delete Group-----------------
-  const handleDeleteGroup = async (groupId) => {
-    await deleteGroup(groupId);
-    setCurrentGroup(null);
-    navigate("/");
   };
 
   // ----------------Group Initials----------------
