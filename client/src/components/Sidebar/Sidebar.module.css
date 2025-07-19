@@ -33,16 +33,11 @@
 }
 
 .heading{
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #f9f9f9;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0; 
-    font-size: 1.8rem; 
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    padding-top: 20px;
+    letter-spacing: 2px;
+    font-size: xx-large;
+    position: fixed;
+    font-weight: 500;
 }
 .groupNames{
     display: flex;
