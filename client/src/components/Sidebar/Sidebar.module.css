@@ -1,23 +1,28 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Sidebar.module.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
-    display: flex;
-    width: 100vw;
-
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
-/* -------sidebar-------- */
-.sidebar{
-  width: 20vw;
+
+/* ---------- Sidebar base styles ---------- */
+.sidebar {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
   background-color: #f9f9f9;
   overflow-y: auto;
-  scrollbar-width: thin;
+  padding-bottom: 100px;
+  transition: all 0.3s ease;
 }
 
 .sidebarContent {
@@ -28,32 +33,36 @@
   position: relative;
 }
 
-.heading{
-    padding-top: 20px;
-    letter-spacing: 2px;
-    font-size: xx-large;
-    position: fixed;
-    font-weight: 500;
+.heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f9f9f9;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
 }
-.groupNames{
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    flex-direction: column;
-    margin-top: 80px;
-    width: 100%;
-    
+
+.groupNames {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  gap: 12px;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    list-style: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .groupName {
@@ -62,55 +71,53 @@ ul {
   background-color: white;
   border-radius: 16px;
   padding: 0.9rem 1.2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
   color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .groupName:hover {
   background-color: #f1f1f1;
 }
- 
+
 li a.active {
   background-color: rgb(217, 214, 214);
-  color: black;
 }
 
-.circleName{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 50%;
-    color: white;
-    flex-shrink: 0;
+.circleName {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .groupName h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* ---------- FAB (Add group button) ---------- */
 .groupBtn {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: white;
-  background-color: #16008B;
+  background-color: #16008b;
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -119,101 +126,59 @@ li a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 20;
 }
 
-
-/* Mobile-specific styles */
-
-@media (max-width: 1150px) {
-    .heading {
-        font-size: 1.9rem;
-    }
-    .sidebar{
-        width:27vw;
-        height: 100vh;
-        padding-bottom: 100px;
-    }
-    .groupBtn{
-        position: fixed;
-         left: 20%;
-     }
-}
-
-@media (max-width: 700px) {
-    .container {
-        flex-direction: column; 
-    }
-
-    .sidebar {
-        width: 100vw;
-        height: 100vh; 
-        position: relative; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        padding-bottom: 80px;
-        overflow-y: auto;
-        order: 1;
-    }
-
-    .heading {
-      font-size: 2rem;
-      padding: 1.2rem;
-      position: static;
-      margin-bottom: 1rem;
-    }
-
-  .groupNames {
-    margin-top: 0;
+/* ---------- Desktop view (≥769px) ---------- */
+@media (min-width: 769px) {
+  .sidebar {
+    width: 20vw;
   }
 
   .groupBtn {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    font-size: 3rem;
-    width: 60px;
-    height: 60px;
-   } 
+    width: 50px;
+    height: 50px;
+    font-size: 2.2rem;
+  }
 }
 
+/* ---------- Mobile view (<768px) ---------- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 
-@media (max-width: 500px) {
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 100px;
+  }
+
   .heading {
-    font-size: 1.8rem;
-    text-align: center;
-    font-weight: 600;
-    padding: 1.5rem 0;
+    font-size: 1.7rem;
+    padding: 1rem;
+    position: static;
+    border-bottom: none;
   }
 
   .groupNames {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    padding: 0 1rem;
-    margin-top: 0;
+    padding: 1rem;
+    gap: 10px;
   }
 
-  .groupName {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border-radius: 16px;
+  .groupBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
   }
 
   .groupName h3 {
     font-size: 0.95rem;
   }
-    
-  .groupBtn {
-    position: absolute;   
-    width: 52px;
-    height: 52px;
-    font-size: 2rem;
-    bottom: 12px;
-    right: 12px;
-  }
 }
-
