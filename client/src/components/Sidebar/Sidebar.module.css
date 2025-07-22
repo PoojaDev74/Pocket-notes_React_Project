@@ -12,6 +12,10 @@
   height: 100vh;
 }
 
+.hide {
+  display: none !important;
+}
+
 /* ---------- Sidebar base styles ---------- */
 .sidebar {
   height: 100vh;
