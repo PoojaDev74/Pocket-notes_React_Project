@@ -99,7 +99,7 @@ const Input = () => {
             {isMobile ? (
               <div className={styles.Nav1}>
                 <button onClick={() => navigate("/")} className={styles.backArrowLink}>
-                  <i className="fa-solid fa-arrow-left"></i>
+                  ← Back
                 </button>
                 <div
                   className={styles.circleName}
