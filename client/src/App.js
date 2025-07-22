@@ -24,19 +24,12 @@ return (
  <div className="App"> 
   <Router>
     {isMobile ? (
-      <Routes>
-         <Route path="/" element={
-          !selectedGroup ? (
-            <Sidebar showGroups={showGroups} onStart={handleStart} />
-          ) : (
-          <Input />
-          )
-         } 
-        />
-        <Route path="/group/:groupId/notes" element={<Input/>} />
-        <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
-        <Route path="*" element={<h2 style={{ textAlign: "center", marginTop: "2rem" }}>404 - Page Not Found</h2>} />
-      </Routes>
+       <Routes>
+          <Route path="/" element={<Sidebar showGroups={showGroups} onStart={handleStart} />} />
+          <Route path="/group/:groupId/notes" element={<Input />} />
+          <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
+          <Route path="*" element={<h2 style={{ textAlign: "center", marginTop: "2rem" }}>404 - Page Not Found</h2>} />
+        </Routes>
     )  : (
       <>
          <Sidebar showGroups={showGroups} onStart={handleStart} />
