@@ -3,8 +3,8 @@ import styles from "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const Sidebar = ({ showGroups, onStart }) => {
-  const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
+const Sidebar = ({ showGroups, onStart, isMobile, selectedGroup  }) => {
+  const { groups, toggleNewGroupPopup, selectGroup } = useContext(Data);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -31,7 +31,11 @@ const Sidebar = ({ showGroups, onStart }) => {
 
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${
+        isMobile && selectedGroup ? styles.hide : ""
+      }`}
+    >
       <div className={styles.sidebar}>
         <h1 className={styles.heading}>Pocket Notes</h1>
 
