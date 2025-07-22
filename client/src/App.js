@@ -77,7 +77,6 @@ return (
         pauseOnHover
         theme="light"
        />
-    </Router>
   </div>
 );
 }
