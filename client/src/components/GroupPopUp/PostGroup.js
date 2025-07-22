@@ -43,11 +43,14 @@ const PostGroup = ({ onClose }) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       onClose(event);
     }
-  }, []);
+  }, [onClose]);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleOutsideClick);
+    const timer = setTimeout(() => {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }, 0); 
     return () => {
+      clearTimeout(timer);
       document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, [handleOutsideClick]);
@@ -78,7 +81,6 @@ const PostGroup = ({ onClose }) => {
   </div>
         <div className={styles.popupButtons}>
           <button onClick={handleCreate}>Create</button>
-          <button onClick={onClose}>✕</button>
         </div>
       </div>
     </div>
