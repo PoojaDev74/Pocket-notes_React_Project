@@ -28,7 +28,7 @@ const Sidebar = ({ showGroups, onStart }) => {
     if (window.innerWidth <= 768) {
       navigate(`/group/${group._id}/notes`);
     } else {
-      setSelectedGroup(group);
+      selectGroup(group);
     }
   };
 
