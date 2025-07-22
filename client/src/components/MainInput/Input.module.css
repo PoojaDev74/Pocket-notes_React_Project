@@ -15,7 +15,7 @@
   justify-content: space-between; 
   height: 8%; 
   box-sizing: border-box;
-  width: 80vw;
+  width: 100vw;
   padding: 0 1rem;
 }
 
@@ -75,7 +75,7 @@
     position: relative;
     
 }
-  textarea{
+.noteInput {
     width: 76vw;
     height: 14vh;
     font-size: larger;
@@ -88,7 +88,7 @@
     left: 2%;
     border: none; 
 }
-textarea:focus {
+.noteInput:focus {
     outline: none;
   }
 
@@ -97,10 +97,9 @@ textarea:focus {
   font-size: large;
 }
 
-.noteBtn{
+.noteBtn {
   background-color: transparent;
   border: none;
-  color: #001f8b;
   font-size: 1.8rem;
   cursor: pointer;
   display: flex;
@@ -109,16 +108,15 @@ textarea:focus {
   min-width: 40px;
   min-height: 40px;
   position: absolute;
-  left: 94%;
 }
 
-.noteBtn:not([disabled]) {
-    color: #001F8B;
-    cursor: pointer; 
-  }
+.active {
+  color: white;
+}
 
-.noteBtn[disabled] {
-    color: rgb(208, 204, 204);
+.disabled {
+  color: rgb(208, 204, 204);
+  cursor: not-allowed;
 }
 
 .records {
@@ -180,7 +178,7 @@ textarea:focus {
     top: 20%;
     line-height: 25px;
 }
-img{
+.contentImg img{
     height: 40vh;
     background-position: 50%;
     background-repeat: no-repeat;
