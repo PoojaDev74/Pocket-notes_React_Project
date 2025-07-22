@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import styles from "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = ({ showGroups, onStart }) => {
   const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
    const location = useLocation();
+   const navigate = useNavigate();
 
   const trimGroupName = (name) => {
     if (!name || typeof name !== "string") {
@@ -20,6 +21,14 @@ const Sidebar = ({ showGroups, onStart }) => {
       const firstLetterFirstWord = words[0].charAt(0).toUpperCase();
       const firstLetterSecondWord = words[1].charAt(0).toUpperCase();
       return `${firstLetterFirstWord}${firstLetterSecondWord}`;
+    }
+  };
+
+    const handleGroupClick = (group) => {
+    if (window.innerWidth <= 768) {
+      navigate(`/group/${group._id}/notes`);
+    } else {
+      setSelectedGroup(group);
     }
   };
 
@@ -46,8 +55,7 @@ const Sidebar = ({ showGroups, onStart }) => {
               
                 return (
                   <li key={group._id}>
-                    <Link
-                      to={`/group/${group._id}/notes`}
+                    <div
                       className={`${styles.groupName} ${isActive ? styles.active : ""}`}
                       onClick={() => selectGroup(group)}
                     >
@@ -58,7 +66,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                         {trimGroupName(group.name)}
                       </div>
                       <h3>{group.name}</h3>
-                    </Link>
+                    </div>
                   </li>
                 );
               })}
