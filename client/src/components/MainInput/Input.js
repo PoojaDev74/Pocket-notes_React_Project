@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Data } from "../../Context/NotesContext";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
 import styles from "./Input.module.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 // --------------Input Section------------------
 const Input = () => {
