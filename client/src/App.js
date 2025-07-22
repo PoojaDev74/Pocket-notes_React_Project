@@ -29,17 +29,41 @@ return (
               path="/"
               element={
                 <>
-                  <Sidebar showGroups={showGroups} onStart={handleStart} />
+                  <Sidebar 
+                    showGroups={showGroups}
+                    onStart={handleStart}
+                    isMobile={isMobile}
+                    selectedGroup={selectedGroup}
+                  />
                   {!selectedGroup ? <WelcomeScreen /> : <Input />}
                 </>
               }
             />
-          <Route path="/group/:groupId/notes" element={<Input />} />
-          <Route path="*" element={<h2 style={{ textAlign: "center", marginTop: "2rem" }}>404 - Page Not Found</h2>} />
-        </Routes>
+          <Route 
+              path="/group/:groupId/notes" 
+              element={
+                 <Input
+                  isMobile={isMobile}
+                  onBack={() => navigate("/")}
+                />
+              }
+          />
+          <Route 
+             path="*" 
+             element={
+               <h2 style={{ textAlign: "center", marginTop: "2rem" }}>
+                404 - Page Not Found
+               </h2>} 
+          />
+       </Routes>
     )  : (
       <>
-         <Sidebar showGroups={showGroups} onStart={handleStart} />
+         <Sidebar 
+             showGroups={showGroups}
+             onStart={handleStart}
+             isMobile={isMobile}
+             selectedGroup={selectedGroup}
+         />
          {selectedGroup ? <Input /> : <WelcomeScreen />}
       </>
     )}
