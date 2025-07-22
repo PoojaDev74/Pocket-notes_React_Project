@@ -8,12 +8,13 @@ import {Data}  from './Context/NotesContext';
 import { useContext, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useIsMobile from './hooks/useIsMobile';
 
 function App() {
 
 const { newGroupPopupVisible, toggleNewGroupPopup, selectedGroup } = useContext(Data);
 const [showGroups, setShowGroups] = useState(false);
-const isMobile = window.innerWidth <= 700;
+const isMobile = useIsMobile(768);
 
   const handleStart = () => {
     setShowGroups(true);
@@ -33,6 +34,7 @@ return (
         />
         <Route path="/group/:groupId/notes" element={<Input/>} />
         <Route path="/new-group" element={<PostGroup onClose={toggleNewGroupPopup} />} />
+        <Route path="*" element={<h2 style={{ textAlign: "center", marginTop: "2rem" }}>404 - Page Not Found</h2>} />
       </Routes>
     )  : (
       <>
@@ -42,7 +44,7 @@ return (
     )}
     {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
 
-             <ToastContainer
+       <ToastContainer
         position="top-right"
         autoClose={3000}
         hideProgressBar={false}
