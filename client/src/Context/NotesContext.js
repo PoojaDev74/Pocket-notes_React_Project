@@ -11,7 +11,7 @@ const NotesContext = ({ children }) => {
     const [userId] = useState(() => {
     let storedId = localStorage.getItem("userId");
     if (!storedId) {
-      storedId = crypto.randomUUID(); // Or use uuid() from 'uuid'
+      storedId = crypto.randomUUID(); 
       localStorage.setItem("userId", storedId);
     }
     return storedId;
