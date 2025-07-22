@@ -110,7 +110,6 @@ li a.active {
   white-space: nowrap;
 }
 
-/* ---------- FAB (Add group button) ---------- */
 .groupBtn {
   position: absolute;
   bottom: 20px;
@@ -129,23 +128,31 @@ li a.active {
   z-index: 20;
 }
 
-/* ---------- Desktop view (≥769px) ---------- */
-@media (min-width: 769px) {
+/* ---------- Desktop view (≥1050px) ---------- */
+@media (min-width: 1050px) {
   .sidebar {
     width: 20vw;
   }
+}
 
-  .groupBtn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 2.2rem;
+/* ---------- Medium screens (769px–1049px) ---------- */
+@media (min-width: 769px) and (max-width: 1049px) {
+  .sidebar {
+    width: 25vw;
+  }
+
+  .groupName h3 {
+    font-size: 0.95rem;
+  }
+
+  .circleName {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
   }
 }
 
-/* ---------- Mobile view (<768px) ---------- */
+/* ---------- Tablets and small screens (<768px) ---------- */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -180,5 +187,30 @@ li a.active {
 
   .groupName h3 {
     font-size: 0.95rem;
+  }
+}
+
+/* ---------- Phones (<500px) ---------- */
+@media (max-width: 500px) {
+  .groupName {
+    padding: 0.8rem 1rem;
+  }
+
+  .groupName h3 {
+    font-size: 0.9rem;
+  }
+
+  .circleName {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .groupBtn {
+    bottom: 16px;
+    right: 16px;
+    width: 55px;
+    height: 55px;
+    font-size: 2.3rem;
   }
 }
