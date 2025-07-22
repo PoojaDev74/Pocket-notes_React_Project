@@ -1,5 +1,4 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PostGroup from "./components/GroupPopUp/PostGroup"
 import Input from './components/MainInput/Input';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -24,7 +23,6 @@ const navigate = useNavigate();
   
 return (
  <div className="App"> 
-  <Router>
     {isMobile ? (
        <Routes>
           <Route
