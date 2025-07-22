@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ showGroups, onStart }) => {
   const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
