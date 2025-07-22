@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Data } from "../../Context/NotesContext";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
 import styles from "./Input.module.css";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // --------------Input Section------------------
 const Input = () => {
@@ -17,7 +17,6 @@ const Input = () => {
   const [newNoteInput, setNewNoteInput] = useState("");
   const { groupId } = useParams();
   const [currentGroup, setCurrentGroup] = useState(null);
-  const navigate = useNavigate();
   const isMobile = window.innerWidth <= 700;
 
   // Find the group by URL param (mobile view)
