@@ -42,7 +42,7 @@ const NotesContext = ({ children }) => {
     return;
   }
     getGroups();
-  }, []);
+  }, [getGroups]);
 
   const createGroup = async (name,color) => {
     try {
