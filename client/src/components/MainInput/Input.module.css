@@ -119,6 +119,16 @@
   cursor: not-allowed;
 }
 
+.backArrowLink {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .records {
     width: 100%;
     display: flex;
