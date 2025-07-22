@@ -67,15 +67,12 @@ const NotesContext = ({ children }) => {
           userId
           },
         }
-      }); 
+      ); 
         setNotes(response.data);
       } catch (error) {
         console.error("Error fetching notes:", error);
         setNotes([]);
       }
-    } else {
-      setNotes([]);
-    }
   }, [userId]);
 
   const createNote = async (noteData) => {
