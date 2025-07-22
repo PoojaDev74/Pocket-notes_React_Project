@@ -57,7 +57,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                           {trimGroupName(group.name)}
                         </div>
                         <h3>{group.name}</h3>
-                      </Link>
+                       </div>
                     </li>
                   );
                 })}
