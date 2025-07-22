@@ -22,7 +22,11 @@ const Sidebar = ({ showGroups, onStart }) => {
 
     const handleGroupClick = (group) => {
     selectGroup(group); 
-    navigate(`/group/${group._id}/notes`);
+    onStart?.(); 
+
+    setTimeout(() => {
+      navigate(`/group/${group._id}/notes`);
+    }, 0);
   };
 
 
@@ -44,7 +48,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                     <li key={group._id}>
                       <div
                         className={`${styles.groupName} ${isActive ? styles.active : ""}`}
-                        onClick={() => selectGroup(group)}
+                        onClick={() => handleGroupClick(group)}
                       >
                         <div
                           className={styles.circleName}
