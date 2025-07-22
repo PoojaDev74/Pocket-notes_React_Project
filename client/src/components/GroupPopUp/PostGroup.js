@@ -39,18 +39,18 @@ const PostGroup = ({ onClose }) => {
     };
 
 
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = useCallback((event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       onClose(event);
     }
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleOutsideClick);
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, [onClose]);
+  }, [handleOutsideClick]);
 
   return (
     <div className={`${styles.groupPopupOverlay}`}>
