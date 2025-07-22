@@ -1,188 +1,106 @@
 .groupPopupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .groupPopup {
-    background-color: white;
-    padding: 15px; 
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
-    height: 40%;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-  }
-  
-  .groupPopup h4 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 1em;
-    color: #333;
-    text-align: left; 
-    width: 100%; 
-  }
-   
-  .groupPopup input {
-    width: 100%;
-    height: 50%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-  }
-  
-  .groupPopup>div {
-    margin-bottom: 10px;
-    width: 100%; 
-  }
-  
-  .groupPopup h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #333;
-  }
-  
-  .colorPalette {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .colorCircle {
-    width: 30px; 
-    height: 30px; 
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.2s ease, transform 0.2s ease;
-  }
-  
-  .selected {
-    border: 2px solid black;
-    box-shadow: 0 0 0 2px white;
-  }
-  
-  .popupButtons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 16px; 
-  }
-  
-  .popupButtons button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #16008B;
-    color: white;
-    width: 20%;
-  }
-  
-/* Mobile responsive */
-@media screen and (max-width: 700px) {
- 
-  .footer {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    order: 3;
-  }
-  .groupPopupOverlay {
-    z-index: 1000000;}
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .footer input[type="text"],
-  .footer button {
-    width: 100%;
-  }
+.groupPopup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.groupPopup h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.groupPopup h4 {
+  margin: 10px 0 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.groupPopup input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.groupPopup > div {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.colorPalette {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.colorCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.selected {
+  border: 2px solid black;
+  box-shadow: 0 0 0 2px white;
+}
+
+.popupButtons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.popupButtons button {
+  background-color: #16008b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100px;
 }
 
 @media screen and (max-width: 500px) {
-  .groupPopupOverlay {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-  
   .groupPopup {
-    background-color: white;
-    padding: 15px; 
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    width: 88%;
-    max-width: 500px;
-    height: 30%;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    width: 90%;
+    min-height: 320px;
+    padding: 15px;
   }
 
   .groupPopup h3 {
-    position: relative;
-    top: 2%;
-    left: 1%;
-    font-size: larger;
-    letter-spacing: 1px;
-    font-weight: 500;
+    font-size: 1.2rem;
   }
 
-  .groupPopup h4 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 1em;
-    color: #333;
-    text-align: left; 
-    width: 100%; 
-  }
-  
-  
-  .groupPopup input {
+  .popupButtons button {
+    font-size: 0.9rem;
     width: 100%;
-    height: 20%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
   }
-  
-  .groupPopup>div {
-    width: 100%; 
-
-  }
-  .popupButtons {
-    padding: 10px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #16008B;
-    color: white;
-    position: relative;
-    width: 20%;
-    font-size: 0.8rem;
-  }
- 
 }
