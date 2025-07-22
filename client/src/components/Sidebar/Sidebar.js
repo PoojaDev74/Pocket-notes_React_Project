@@ -4,8 +4,9 @@ import { Data } from "../../Context/NotesContext";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ showGroups, onStart }) => {
-  const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } =
-    useContext(Data);
+  const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
+   const location = useLocation();
+    const isMobile = window.innerWidth <= 768;
 
   const trimGroupName = (name) => {
     if (!name || typeof name !== "string") {
@@ -22,7 +23,6 @@ const Sidebar = ({ showGroups, onStart }) => {
       return `${firstLetterFirstWord}${firstLetterSecondWord}`;
     }
   };
-  const isMobile = window.innerWidth <= 700;
 
   const handlePlusClick = () => {
     if (onStart) {
@@ -39,15 +39,16 @@ const Sidebar = ({ showGroups, onStart }) => {
       <div className={styles.sidebarContent}>
         <div className={styles.groupNames}>
           <ul>
-            {groups && groups.length > 0 ? (
-              groups.map((group) => (
-                <li key={group._id}>
-                  {isMobile ? (
+            {groups.map((group) => {
+                const isActive =
+                  selectedGroup?._id === group._id ||
+                  location.pathname === `/group/${group._id}/notes`;
+              
+                return (
+                  <li key={group._id}>
                     <Link
                       to={`/group/${group._id}/notes`}
-                      className={`${styles.groupName} ${
-                        selectedGroup?._id === group._id ? styles.active : ""
-                      }`}
+                      className={`${styles.groupName} ${isActive ? styles.active : ""}`}
                       onClick={() => selectGroup(group)}
                     >
                       <div
@@ -58,31 +59,12 @@ const Sidebar = ({ showGroups, onStart }) => {
                       </div>
                       <h3>{group.name}</h3>
                     </Link>
-                    
-                  ) : (
-                    <>
-                      <Link
-                        to={`/group/${group._id}/notes`}
-                        className={`${styles.groupName} ${
-                          selectedGroup?._id === group._id ? styles.active : ""
-                        }`}
-                        onClick={() => selectGroup(group)}
-                      >
-                        <div
-                          className={styles.circleName}
-                          style={{ backgroundColor: group.color }}
-                        >
-                          {trimGroupName(group.name)}
-                        </div>
-                        <h3>{group.name}</h3>
-                      </Link>
-                    </>
-                  )}
-                </li>
-              ))
-            ) : null}
-          </ul>
-        </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+  
          <button className={styles.groupBtn} onClick={handlePlusClick}>
            +
          </button>
