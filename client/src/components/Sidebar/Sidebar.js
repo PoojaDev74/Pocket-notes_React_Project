@@ -64,10 +64,11 @@ const Sidebar = ({ showGroups, onStart }) => {
               })}
             </ul>
           </div>
-  
+        <div className={styles.sidebarFooter}>
          <button className={styles.groupBtn} onClick={handlePlusClick}>
            +
          </button>
+        </div>
       </div>
     </div>
    </div>
