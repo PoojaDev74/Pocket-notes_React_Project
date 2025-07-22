@@ -154,7 +154,7 @@ useEffect(() => {
         toggleNewGroupPopup,
         newGroupPopupVisible, 
         selectGroup,
-        setselectedGroup, 
+        setSelectedGroup, 
         userId
       }}
     >
