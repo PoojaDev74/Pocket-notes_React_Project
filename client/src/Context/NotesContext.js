@@ -65,6 +65,7 @@ const NotesContext = ({ children }) => {
           params: {
           groupId,
           userId
+          },
         }
       }); 
         setNotes(response.data);
