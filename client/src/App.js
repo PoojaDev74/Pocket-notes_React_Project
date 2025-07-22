@@ -9,12 +9,14 @@ import { useContext, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useIsMobile from './hooks/useIsMobile';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
 
 const { newGroupPopupVisible, toggleNewGroupPopup, selectedGroup } = useContext(Data);
 const [showGroups, setShowGroups] = useState(false);
 const isMobile = useIsMobile(768);
+const navigate = useNavigate();
 
   const handleStart = () => {
     setShowGroups(true);
