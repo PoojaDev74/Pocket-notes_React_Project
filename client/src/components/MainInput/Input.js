@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { Data } from "../../Context/NotesContext";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
 import styles from "./Input.module.css";
+import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate, useParams } from "react-router-dom";
 
 // --------------Input Section------------------
@@ -18,15 +19,17 @@ const Input = () => {
   const { groupId } = useParams();
   const [currentGroup, setCurrentGroup] = useState(null);
   const navigate = useNavigate();
-  const isMobile = window.innerWidth <= 700;
+  const isMobile = useIsMobile(700);
 
-  // Find the group by URL param (mobile view)
+ 
   useEffect(() => {
     if (groupId && groups) {
       const foundGroup = groups.find((group) => group._id === groupId);
       setCurrentGroup(foundGroup);
     }
   }, [groupId, groups]);
+
+  const group = isMobile ? currentGroup : selectedGroup;
 
   // -------------Date and Time Format--------------
   const formatDateForDisplay = (dateString) => {
@@ -55,10 +58,10 @@ const Input = () => {
     return;
   }
 
-  if (selectedGroup) {
+  if (group) {
     const newNote = {
       info: trimmedNote,
-      groupId: selectedGroup._id,
+      groupId: group._id,
       createdAt: new Date().toISOString(),
     };
     createNote(newNote);
@@ -85,7 +88,7 @@ const Input = () => {
       : words[0].charAt(0).toUpperCase() + words[1].charAt(0).toUpperCase();
   };
 
-  const group = isMobile ? currentGroup : selectedGroup;
+    const groupNotes = notes.filter((note) => note.groupId === group?._id);
 
   return (
     <div className={styles.content}>
@@ -122,10 +125,8 @@ const Input = () => {
           {/* --------------Notes List-------------- */}
           <div className={styles.records}>
             <div className={styles.recordsMain}>
-              {notes
-                .filter((note) => note.groupId === group._id)
-                .map((item) => (
-                  <div className={styles.record} key={item._id}>
+             {groupNotes.map((item) => (
+                <div className={styles.record} key={item._id}>
                     <p>{item.info}</p>
                     {item.createdAt && (
                       <p className={styles.noteCreatedAt}>
@@ -134,7 +135,7 @@ const Input = () => {
                     )}
                   </div>
                 ))}
-              {notes.filter((note) => note.groupId === group._id).length === 0 && (
+               {groupNotes.length === 0 && (
                 <p>No notes for this group yet.</p>
               )}
             </div>
