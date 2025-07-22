@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import styles from "./Sidebar.module.css";
 import { Data } from "../../Context/NotesContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ showGroups, onStart }) => {
   const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
    const location = useLocation();
-   const navigate = useNavigate();
+   const isMobile = window.innerWidth <= 768;
 
   const trimGroupName = (name) => {
     if (!name || typeof name !== "string") {
@@ -55,7 +55,8 @@ const Sidebar = ({ showGroups, onStart }) => {
               
                 return (
                   <li key={group._id}>
-                    <div
+                    <Link
+                      to={`/group/${group._id}/notes`}
                       className={`${styles.groupName} ${isActive ? styles.active : ""}`}
                       onClick={() => selectGroup(group)}
                     >
@@ -66,7 +67,7 @@ const Sidebar = ({ showGroups, onStart }) => {
                         {trimGroupName(group.name)}
                       </div>
                       <h3>{group.name}</h3>
-                    </div>
+                    </Link>
                   </li>
                 );
               })}
