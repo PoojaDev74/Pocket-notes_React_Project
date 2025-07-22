@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 const Sidebar = ({ showGroups, onStart }) => {
   const { groups, toggleNewGroupPopup, selectGroup, selectedGroup } = useContext(Data);
    const location = useLocation();
-    const isMobile = window.innerWidth <= 768;
 
   const trimGroupName = (name) => {
     if (!name || typeof name !== "string") {
