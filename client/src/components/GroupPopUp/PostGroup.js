@@ -6,10 +6,9 @@ const PostGroup = ({ onClose }) => {
   const { createGroup, groups } = useContext(Data);
   const [groupName, setGroupName] = useState('');
   const popupRef = useRef(null);
-  const [selectedColor, setSelectedColor] = useState("");
-
 
   const colorOptions = ['#a879ff', '#ff80bf', '#80f0ff', '#ffaa80', '#007bff', '#6691FF'];
+  const [selectedColor, setSelectedColor] = useState(colorOptions[0]);
   
   const handleColorSelect = (color) => {
      console.log("Selected:", color);
@@ -46,14 +45,14 @@ const PostGroup = ({ onClose }) => {
   }, [onClose]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      document.addEventListener('mousedown', handleOutsideClick);
-    }, 0); 
+    document.addEventListener('mousedown', handleOutsideClick);
+    const escListener = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", escListener);
     return () => {
-      clearTimeout(timer);
       document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener("keydown", escListener);
     };
-  }, [handleOutsideClick]);
+  }, [handleOutsideClick, onClose]);
 
   return (
     <div className={`${styles.groupPopupOverlay}`}>
