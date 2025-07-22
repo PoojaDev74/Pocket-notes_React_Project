@@ -156,7 +156,8 @@ useEffect(() => {
         newGroupPopupVisible, 
         selectedGroup,
         setSelectedGroup, 
-        userId
+        userId, 
+        selectGroup,
       }}
     >
       {children}
