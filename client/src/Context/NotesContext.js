@@ -73,10 +73,6 @@ const NotesContext = ({ children }) => {
       setNotes([]);
     }
   }, [userId]);
-  
-  useEffect(() => {
-    getGroups();
-  }, [getGroups]);
 
   const createNote = async (noteData) => {
     try {
@@ -86,7 +82,7 @@ const NotesContext = ({ children }) => {
        groupId: noteData.groupId,
        userId: userId,
      });
-      setNotes([...notes, response.data]);
+      setNotes(prev => [...prev, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
       console.error("Error creating note:", error);
