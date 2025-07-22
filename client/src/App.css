@@ -4,13 +4,17 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #F7F7F7;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .App{
-  display: flex
+  display: flex;
 }
