@@ -6,6 +6,13 @@
     padding: 0%;
 }
 
+.notesPanel {
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ---------------NAVBAR SECTION----------------- */
 .navbar {
   display: flex;
@@ -78,25 +85,23 @@
 }
 
 .newNoteInput{
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    width: 100%;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
     
 }
 .noteInput {
-    width: 76vw;
-    height: 14vh;
-    font-size: larger;
-    text-align: justify; 
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;  
-    position: absolute;
-    border-radius: 16px;
-    padding: 10px;
-    left: 2%;
-    border: none; 
+  flex: 1;
+  height: 14vh;
+  font-size: larger;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 16px;
+  padding: 10px;
+  border: none;
+  box-sizing: border-box;
+  position: static;
 }
 .noteInput:focus {
     outline: none;
@@ -117,7 +122,6 @@
   justify-content: center;
   min-width: 40px;
   min-height: 40px;
-  position: absolute;
 }
 
 .active {
@@ -149,9 +153,11 @@
   }
   
   .recordsMain {
-    overflow-y: auto; 
-    height: 60vh; 
-    padding: 10px; 
+     overflow-y: auto; 
+     flex: 1;
+     padding: 10px;
+     height: auto;
+     max-height: 60vh;
   }
   
   .record {
@@ -224,7 +230,8 @@ i{
 } 
 
 
-@media (max-width:500px) {
+@media (max-width: 768px) {
+  /* Applies to devices 768px wide and below */
   .navbar {
     width: 100vw;
     height: 7%;
@@ -232,80 +239,71 @@ i{
   }
 
   .navHeading {
-    font-size: 1.7rem;
-    letter-spacing: 1px;
-    font-weight: 400;
-    position: relative;
-    left: 0;
-  }
-
-  .backArrowLink i {
-    font-size: 1.1rem;
-    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
   }
 
   .circleName {
-    font-size: 1rem;
     width: 32px;
     height: 32px;
-    position: relative;
-    left: 0;
+    font-size: 0.9rem;
   }
 
   .noteContainer {
     width: 100vw;
-    top: 9.3%;
     height: 22vh;
-  }
-
-  textarea {
-    width: 90vw;
-    height: 16vh;
   }
 
   .noteBtn {
     left: 84%;
   }
+
+  textarea,
+  .noteInput {
+    width: 90vw;
+    height: 16vh;
+  }
+
+  .notesPanel {
+    width: 100vw;
+  }
 }
 
-@media (min-width: 501px) and (max-width: 700px) {
+@media (min-width: 769px) {
+  /* Applies to tablets in landscape, laptops, and desktops */
   .navbar {
-    width: 100vw;
-    height: 7%;
+    width: 100%;
+    height: 8%;
     padding: 0 1rem;
   }
 
   .navHeading {
-    font-size: 1.5rem;
-    font-weight: 500;
-    position: relative;
-    left: 0;
+    font-size: 1.7rem;
+    font-weight: 600;
   }
 
   .circleName {
+    width: 40px;
+    height: 40px;
     font-size: 1rem;
-    width: 36px;
-    height: 36px;
-    position: relative;
-    left: 0;
   }
 
-  .noteBtn {
-    left: 88%;
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1050px) {
-  .navbar {
-    width: 100vw;
-  }
-
-  .navHeading {
-    font-size: 1.6rem;
-    max-width: 60%;
+  .noteContainer {
+    width: 100%;
+    height: 20vh;
   }
 
   .noteBtn {
     left: 91%;
   }
+
+  .noteInput {
+    width: 76vw;
+    height: 14vh;
+  }
+
+  .notesPanel {
+    width: 80vw;
+  }
 }
+
