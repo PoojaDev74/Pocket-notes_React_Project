@@ -42,12 +42,12 @@ const NotesContext = ({ children }) => {
     return;
   }
     getGroups();
-  }, [getGroups]);
+  }, [getGroups, userId]);
 
   const createGroup = async (name,color) => {
     try {
       const response = await axios.post(`https://pocket-notes-react-project-backend.onrender.com/api/groups`, { name , color, userId });
-      getGroups(); 
+      await getGroups(); 
       setSelectedGroup(response.data);
     } catch (error) {
       console.error("Error creating group:", error.response?.data?.error || error.message);      
@@ -55,7 +55,10 @@ const NotesContext = ({ children }) => {
   };
 
   const getNotes = useCallback(async (groupId) => {
-    if (groupId) {
+     if (!groupId) {
+        setNotes([]);
+        return;
+      }
       try {
         const response = await axios.get(`https://pocket-notes-react-project-backend.onrender.com/api/group`,
         {
@@ -82,7 +85,7 @@ const NotesContext = ({ children }) => {
        groupId: noteData.groupId,
        userId: userId,
      });
-      setNotes([...notes, response.data]);
+      setNotes((prev) => [...prev, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
       console.error("Error creating note:", error);
@@ -94,10 +97,12 @@ const NotesContext = ({ children }) => {
     if (event) { 
       event.stopPropagation();
     }
-    setNewGroupPopupVisible(!newGroupPopupVisible);
-      console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !newGroupPopupVisible);
+     setNewGroupPopupVisible((prev) => {
+      const newState = !prev;
+      console.log("newGroupPopupVisible =>", newState);
+      return newState;
+    });
   };
-  
   const selectGroup = (group) => {
     setSelectedGroup(group);
     getNotes(group?._id);
@@ -144,16 +149,14 @@ useEffect(() => {
     <Data.Provider
       value={{
         notes,
-        setNotes,
         groups,
-        setGroups,
         getGroups,
         createGroup,
         getNotes,
         createNote,
         toggleNewGroupPopup,
         newGroupPopupVisible, 
-        selectGroup,
+        selectedGroup,
         setSelectedGroup, 
         userId
       }}
