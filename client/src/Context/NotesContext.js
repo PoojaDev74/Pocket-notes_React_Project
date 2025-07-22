@@ -4,7 +4,7 @@ export const Data = createContext();
 
 const NotesContext = ({ children }) => {
   const [notes, setNotes] = useState([]); 
-  const [groups, setGroups] = useState(null);
+  const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null); 
   const [newGroupPopupVisible, setNewGroupPopupVisible] = useState(false);
 
