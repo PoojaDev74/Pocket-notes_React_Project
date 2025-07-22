@@ -11,17 +11,13 @@
 }
 /* -------sidebar-------- */
 .sidebar{
-    width: 20vw;
-    height: 100vh;
-    padding-bottom: 100px;
-    scrollbar-width:thin;
-    scroll-behavior: smooth;
-    overflow-y: auto; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: #f9f9f9
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .sidebarContent {
