@@ -94,6 +94,7 @@ const Input = () => {
     <div className={styles.content}>
       {group ? (
         <>
+          <div className={styles.notesPanel}>
           {/* --------------Header / Navbar-------------- */}
           <div className={styles.navbar}>
             {isMobile ? (
@@ -160,6 +161,7 @@ const Input = () => {
               </button>
             </div>
           </div>
+         </div>
         </>
       ) : (
         // --------------Default Welcome Screen (Desktop)--------------
