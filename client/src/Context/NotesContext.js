@@ -82,7 +82,7 @@ const NotesContext = ({ children }) => {
        groupId: noteData.groupId,
        userId: userId,
      });
-      setNotes(prev => [...prev, response.data]);
+      setNotes([...notes, response.data]);
       console.log("Note created successfully:", response.data);
     } catch (error) {
       console.error("Error creating note:", error);
@@ -90,17 +90,17 @@ const NotesContext = ({ children }) => {
   };
 
   const toggleNewGroupPopup = (event) => {
+    console.log('toggleNewGroupPopup called')
     if (event) { 
       event.stopPropagation();
     }
-    setNewGroupPopupVisible(prev => {
-      console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !prev);
-      return !prev;
-    });
+    setNewGroupPopupVisible(!newGroupPopupVisible);
+      console.log("toggleNewGroupPopup called, newGroupPopupVisible:", !newGroupPopupVisible);
   };
   
   const selectGroup = (group) => {
     setSelectedGroup(group);
+    getNotes(group?._id);
   };
 
   // ---------------------LOCAL STORAGE---------------//
