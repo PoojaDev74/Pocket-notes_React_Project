@@ -38,7 +38,8 @@ const Sidebar = ({ showGroups, onStart }) => {
       <div className={styles.sidebarContent}>
         <div className={styles.groupNames}>
           <ul>
-            {groups.map((group) => {
+            {groups?.length > 0 && 
+              groups.map((group) => {
                 const isActive =
                   selectedGroup?._id === group._id ||
                   location.pathname === `/group/${group._id}/notes`;
