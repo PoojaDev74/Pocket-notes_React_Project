@@ -7,10 +7,11 @@ import NotesProvider from "./Context/NotesContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <NotesProvider>
-    <App />
-    </NotesProvider>
+   <BrowserRouter> 
+      <NotesProvider>
+        <App />
+      </NotesProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
