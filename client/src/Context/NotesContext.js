@@ -2,7 +2,7 @@ import { createContext, useState, useEffect, useCallback } from "react";
 import axios from "axios"
 export const Data = createContext();
 
-const NotesContext = ({ children }) => {
+const NotesProvider = ({ children }) => {
   const [notes, setNotes] = useState([]); 
   const [groups, setGroups] = useState([]);
   const [selectedGroup, setSelectedGroup] = useState(null); 
@@ -165,4 +165,4 @@ useEffect(() => {
   );
 };
 
-export default NotesContext;
+export default NotesProvider;
