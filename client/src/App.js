@@ -29,14 +29,16 @@ return (
               path="/"
               element={
                 <>
-                  <Sidebar 
+                 {!selectedGroup && (
+                  <Sidebar
                     showGroups={showGroups}
                     onStart={handleStart}
                     isMobile={isMobile}
                     selectedGroup={selectedGroup}
                   />
-                  {!selectedGroup ? <WelcomeScreen /> : <Input />}
-                </>
+                )}
+                {!selectedGroup && <WelcomeScreen />}
+               </>
               }
             />
           <Route 
