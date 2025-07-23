@@ -19,8 +19,6 @@ const Input = ({ isMobile, onBack }) => {
   const { groupId } = useParams();
   const [currentGroup, setCurrentGroup] = useState(null);
   const navigate = useNavigate();
-  const isMobile = useIsMobile(768);
-
  
   useEffect(() => {
     if (groupId && groups) {
@@ -165,8 +163,7 @@ const Input = ({ isMobile, onBack }) => {
         </>
       ) : (
         // --------------Default Welcome Screen (Desktop)--------------
-       !selectedGroup &&  !isMobile && 
-            <WelcomeScreen />
+        !isMobile && <WelcomeScreen />
       )}
     </div>
   );
