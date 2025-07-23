@@ -92,6 +92,12 @@
 
 /* Desktop */
 @media (min-width: 769px) {
+
+  .container {
+     width: 300px;
+     height: 100%;
+  }
+  
   .sidebar {
     width: 300px;
     min-width: 300px;
