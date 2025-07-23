@@ -26,6 +26,21 @@ body {
   overflow: hidden;
 }
 
+.sidebar {
+  width: 300px;
+  min-width: 280px;
+  background-color: #f8f8f8;
+  overflow-y: auto;
+}
+
+.mainContent {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
   .App {
     flex-direction: column;
