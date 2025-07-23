@@ -133,17 +133,22 @@ li a.active {
 }
 
 @media (min-width: 769px) {
+
   .container {
     flex-direction: row;
     width: 100vw;
   }
 
   .sidebar {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
     height: 100vh;
     overflow-y: auto;
     background-color: #f9f9f9;
-    padding-bottom: 100px;
-  }
+    padding-bottom: 100px;
+  }
 
   .heading {
     font-size: 1.8rem;
@@ -223,15 +228,4 @@ li a.active {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1049px) {
-  .sidebar {
-    width: 25vw;
-  }
-}
-
-@media (min-width: 1050px) {
-  .sidebar {
-    width: 20vw;
-  }
-}
 
