@@ -191,21 +191,6 @@
 
 
 /* -----------Background Image--------------- */
- .contentImg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative; 
-    top: 20%;
-    line-height: 25px;
-}
-.contentImg img{
-    height: 40vh;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 450px;
-}
 .contentHeading{
     font-size: xx-large;
     letter-spacing: 2px;
