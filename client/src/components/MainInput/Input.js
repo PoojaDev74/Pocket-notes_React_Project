@@ -12,6 +12,7 @@ const Input = ({ isMobile, onBack }) => {
     groups,
     createNote,
     selectedGroup,
+    setSelectedGroup, 
     notes,
   } = useContext(Data);
 
@@ -97,9 +98,15 @@ const Input = ({ isMobile, onBack }) => {
           <div className={styles.navbar}>
             {isMobile ? (
               <div className={styles.Nav1}>
-                <button onClick={onBack} className={styles.backArrowLink}>
-                  ← 
-                </button>
+                <button 
+                   onClick={() => {
+                    setSelectedGroup(null); 
+                    onBack();              
+                   }} 
+                  className={styles.backArrowLink}
+                 >
+                   ← 
+                 </button>
                 <div
                   className={styles.circleName}
                   style={{ backgroundColor: group.color }}
