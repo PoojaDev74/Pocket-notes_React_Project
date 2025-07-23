@@ -23,8 +23,8 @@ body {
 }
 
 .sidebar {
-  width: 300px;
-  min-width: 280px;
+  width: 200px;
+  min-width: 180px;
   background-color: #f8f8f8;
   overflow-y: auto;
   border-right: 1px solid #ccc;
