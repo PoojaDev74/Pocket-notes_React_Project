@@ -144,6 +144,8 @@ const Input = ({ isMobile, onBack }) => {
           <div className={styles.noteContainer}>
             <div className={styles.newNoteInput}>
               <textarea
+                id="noteInput"
+                name="note"
                 value={newNoteInput}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
