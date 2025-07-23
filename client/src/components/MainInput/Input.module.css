@@ -10,6 +10,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ---------------NAVBAR SECTION----------------- */
@@ -72,6 +73,7 @@
 /* -----------------NOTES SECTION---------------- */
 .noteContainer {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   background-color: #16008b;
@@ -144,6 +146,7 @@
   flex: 1; 
   overflow-y: auto;
   padding: 10px;
+  box-sizing: border-box;
 }
   
   .recordsMain {
@@ -242,8 +245,11 @@ i{
   }
 
   .noteContainer {
-    width: 100vw;
-    height: 22vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
   }
 
   .noteBtn {
@@ -254,6 +260,10 @@ i{
   .noteInput {
     width: 90vw;
     height: 16vh;
+  }
+
+  .records {
+    padding-bottom: 24vh; 
   }
 
   .notesPanel {
