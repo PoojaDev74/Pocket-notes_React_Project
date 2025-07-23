@@ -107,6 +107,29 @@ const NotesProvider = ({ children }) => {
   };
 
   // ---------------------LOCAL STORAGE---------------//
+
+useEffect(() => {
+  if (selectedGroup) {
+    localStorage.setItem("selectedGroup", JSON.stringify(selectedGroup));
+  }
+}, [selectedGroup]);
+
+useEffect(() => {
+  const storedGroup = localStorage.getItem("selectedGroup");
+
+  if (storedGroup && groups.length > 0) {
+    const parsedGroup = JSON.parse(storedGroup);
+    const exists = groups.find((g) => g._id === parsedGroup._id);
+    
+    if (exists) {
+      setSelectedGroup(parsedGroup);
+    } else {
+      setSelectedGroup(null); // fallback to WelcomeScreen
+    }
+  } else {
+    setSelectedGroup(null); // no group stored
+  }
+}, [groups]);
   
 useEffect(() => {
   if (selectedGroup?._id) {
