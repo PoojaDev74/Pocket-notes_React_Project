@@ -4,7 +4,6 @@ import styles from './WelcomeScreen.module.css';
 
 const WelcomeScreen = () => {
   return (
-    <div className={styles.welcomesection}>
        <div className={styles.welcomeScreen}>
           <img src={backgroundImage} alt="Pocket Notes Background" />
          <div className={styles.emptyState}>
