@@ -21,7 +21,8 @@ function App() {
   };
 
   useEffect(() => {
-    if (isMobile && selectedGroup) {
+   const isHomePage = window.location.pathname === "/";
+    if (isMobile && selectedGroup && !isHomePage) {
       navigate(`/group/${selectedGroup._id}/notes`);
     }
   }, [isMobile, selectedGroup, navigate]);
