@@ -107,36 +107,12 @@ const NotesProvider = ({ children }) => {
   };
 
   // ---------------------LOCAL STORAGE---------------//
-
-useEffect(() => {
-  const hasVisited = localStorage.getItem("hasVisited");
-
-  if (!hasVisited) {
-    // First time — show WelcomeScreen
-    localStorage.setItem("hasVisited", "true");
-    setSelectedGroup(null);
-  } else {
-    const storedGroup = localStorage.getItem("selectedGroup");
-    if (storedGroup) {
-      const group = JSON.parse(storedGroup);
-      setSelectedGroup(group);
-    }
-  }
-}, []);
   
 useEffect(() => {
   if (selectedGroup?._id) {
     getNotes(selectedGroup._id);
   }
 }, [selectedGroup, getNotes]);
-  
-  useEffect(() => {
-    if (selectedGroup) {
-      localStorage.setItem("selectedGroup", JSON.stringify(selectedGroup));
-    } else {
-      localStorage.removeItem("selectedGroup");
-    }
-  }, [selectedGroup]);
   
   useEffect(() => {
     if (notes) {
