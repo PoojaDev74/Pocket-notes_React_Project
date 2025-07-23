@@ -19,7 +19,7 @@ const Input = () => {
   const { groupId } = useParams();
   const [currentGroup, setCurrentGroup] = useState(null);
   const navigate = useNavigate();
-  const isMobile = useIsMobile(700);
+  const isMobile = useIsMobile(768);
 
  
   useEffect(() => {
