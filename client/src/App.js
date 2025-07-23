@@ -61,20 +61,24 @@ function App() {
           />
         </Routes>
       ) : (
-        <>
-          <Sidebar
-            showGroups={showGroups}
-            onStart={handleStart}
-            isMobile={isMobile}
-            selectedGroup={selectedGroup}
-          />
-          {selectedGroup ? (
-            <Input isMobile={isMobile} />
+          <div className="layout">
+            <div className="sidebar">
+                <Sidebar
+                  showGroups={showGroups}
+                  onStart={handleStart}
+                  isMobile={isMobile}
+                  selectedGroup={selectedGroup}
+                />
+            </div>
+           <div className="mainContent">
+            {selectedGroup ? (
+              <Input isMobile={isMobile} />
           ) : (
-            <WelcomeScreen />
+             <WelcomeScreen />
           )}
-        </>
-      )}
+         </div>
+       </div>
+          )}
 
       {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
 
