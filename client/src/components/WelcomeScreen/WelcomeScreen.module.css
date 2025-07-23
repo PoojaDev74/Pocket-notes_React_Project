@@ -1,51 +1,63 @@
-.welcomeSection {
+.welcomesection {
   flex: 1;
   background-color: #DAE5F5;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  background-color: #001F8B;
+  color: white;
+  padding: 16px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.scrollableContent {
+  flex: 1;
   overflow-y: auto;
-}
-
-.emptyState {
-  margin: auto;
-  text-align: center;
-}
-
-.emptyState h2 {
-    font-size: xx-large;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.emptyState p {
-  font-size: 18px;
-  color: #666666;
+  padding: 40px 30px;
 }
 
 .welcomeScreen {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  position: relative; 
-  top: 20%;
-  line-height: 25px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  margin-top: 60px;
 }
 
-img {
-    height: 40vh;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 450px;
+.welcomeScreen img {
+  height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.emptyState h2 {
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.emptyState p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
 }
 
 .footer {
-   margin-top: 120px;
-   position: absolute;
-   bottom: -42%;
+  text-align: center;
+  font-size: 14px;
+  padding: 12px;
+  color: #444;
+  background-color: #DAE5F5;
+  position: sticky;
+  bottom: 0;
+  z-index: 9;
 }
-
-
-
-
