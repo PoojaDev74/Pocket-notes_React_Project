@@ -7,7 +7,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 import { useNavigate, useParams } from "react-router-dom";
 
 // --------------Input Section------------------
-const Input = () => {
+const Input = ({ isMobile, onBack }) => {
   const {
     groups,
     createNote,
@@ -99,7 +99,7 @@ const Input = () => {
           <div className={styles.navbar}>
             {isMobile ? (
               <div className={styles.Nav1}>
-                <button onClick={() => navigate("/")} className={styles.backArrowLink}>
+                <button onClick={onBack} className={styles.backArrowLink}>
                   ← 
                 </button>
                 <div
