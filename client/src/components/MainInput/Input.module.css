@@ -7,7 +7,6 @@
 }
 
 .notesPanel {
-  width: 80vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -80,8 +79,6 @@
   padding: 10px;
   height: 20vh;
   box-sizing: border-box;
-  position: relative;
-  top: 4em;
 }
 
 .newNoteInput{
@@ -144,20 +141,15 @@
 }
 
 .records {
-    width: 100%;
-    display: flex;
-    flex-direction: column; 
-    gap: 14px; 
-    padding: 10px; 
-    box-sizing: border-box;
-  }
+  flex: 1; 
+  overflow-y: auto;
+  padding: 10px;
+}
   
   .recordsMain {
-     overflow-y: auto; 
-     flex: 1;
-     padding: 10px;
-     height: auto;
-     max-height: 60vh;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
   }
   
   .record {
