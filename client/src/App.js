@@ -34,18 +34,14 @@ function App() {
             path="/"
             element={
               <>
-                {!selectedGroup && (
-                  <>
                     <Sidebar
                       showGroups={showGroups}
                       onStart={handleStart}
                       isMobile={isMobile}
                       selectedGroup={selectedGroup}
                     />
-                    <WelcomeScreen />
-                  </>
-                )}
-              </>
+                    {!selectedGroup && <WelcomeScreen />}
+               </>
             }
           />
           <Route
