@@ -160,7 +160,7 @@
     background-color: white; 
     border: 1px solid #ddd;
     border-radius: 5px; 
-    padding: 10px; 
+    padding: 12px; 
     margin-bottom: 5px; 
     width: 100%; 
     height: auto;
@@ -172,12 +172,12 @@
   }
   
   .record h1 {
-    font-size: 1.7em;
+    font-size: 1.8em;
     margin-bottom: 5px;
   }
   
   .record p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1;
     margin-bottom: 5px;
   }
