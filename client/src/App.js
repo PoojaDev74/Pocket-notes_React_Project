@@ -34,15 +34,12 @@ function App() {
           <Route
             path="/"
             element={
-              <>
                     <Sidebar
                       showGroups={showGroups}
                       onStart={handleStart}
                       isMobile={isMobile}
                       selectedGroup={selectedGroup}
                     />
-                    {!isMobile && !selectedGroup && <WelcomeScreen />}
-               </>
             }
           />
           <Route
@@ -71,7 +68,11 @@ function App() {
             isMobile={isMobile}
             selectedGroup={selectedGroup}
           />
-          {selectedGroup ? <Input /> : <WelcomeScreen />}
+          {selectedGroup ? (
+            <Input isMobile={isMobile} />
+          ) : (
+            <WelcomeScreen />
+          )}
         </>
       )}
 
