@@ -23,10 +23,11 @@ body {
 }
 
 .sidebar {
-  width: 200px;
-  min-width: 180px;
+  width: 300px;
+  min-width: 280px;
   background-color: #f8f8f8;
   overflow-y: auto;
+  flex-shrink: 0;
   border-right: 1px solid #ccc;
 }
 
@@ -36,6 +37,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 @media (max-width: 768px) {
