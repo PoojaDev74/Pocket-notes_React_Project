@@ -5,7 +5,10 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -17,4 +20,18 @@ body {
 
 .App{
   display: flex;
+  flex-direction: row; 
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
 }
