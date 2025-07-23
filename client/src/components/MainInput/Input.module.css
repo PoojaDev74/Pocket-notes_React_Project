@@ -269,8 +269,17 @@
     height: 14vh;
   }
 
-  .notesPanel {
-    width: 80vw;
+   .notesPanel {
+    flex: 1;
+    width: auto; /* Let flex take over */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
+
+  .noteInput {
+    width: 100%;
+  }
 }
 
