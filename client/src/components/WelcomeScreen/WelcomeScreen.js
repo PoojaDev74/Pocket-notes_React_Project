@@ -13,7 +13,6 @@ const WelcomeScreen = () => {
         </div>
             <div className={styles.footer}>🔒 end-to-end encrypted</div>
       </div>
-    </div>
   );
 };
 
