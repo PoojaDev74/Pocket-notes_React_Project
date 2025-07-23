@@ -264,11 +264,6 @@
     left: 91%;
   }
 
-  .noteInput {
-    width: 76vw;
-    height: 14vh;
-  }
-
    .notesPanel {
     flex: 1;
     width: auto; /* Let flex take over */
