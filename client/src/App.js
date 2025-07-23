@@ -61,7 +61,6 @@ function App() {
           />
         </Routes>
       ) : (
-          <div className="layout">
             <div className="sidebar">
                 <Sidebar
                   showGroups={showGroups}
@@ -73,11 +72,10 @@ function App() {
            <div className="mainContent">
             {selectedGroup ? (
               <Input isMobile={isMobile} />
-          ) : (
+            ) : (
              <WelcomeScreen />
-          )}
-         </div>
-       </div>
+            )}
+           </div>
           )}
 
       {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
