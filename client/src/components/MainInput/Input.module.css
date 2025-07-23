@@ -1,9 +1,9 @@
-.content{
-    width: 100vw;
-    height: 100vh;
-    background-color:#DAE5F5;
-    margin: 0%;
-    padding: 0%;
+.content {
+  width: 100vw;
+  height: 100vh;
+  background-color: #DAE5F5;
+  margin: 0%;
+  padding: 0%;
 }
 
 .notesPanel {
@@ -16,22 +16,22 @@
 /* ---------------NAVBAR SECTION----------------- */
 .navbar {
   display: flex;
-  align-items:center;
+  align-items: center;
   background-color: #001F8B;
   color: white;
-  justify-content: space-between; 
-  height: 8%; 
+  justify-content: space-between;
+  height: 8%;
   box-sizing: border-box;
   width: 100vw;
   padding: 0 1rem;
 }
 
-.Nav1{
+.Nav1 {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
-}  
+}
 
 .backButton {
   background: none;
@@ -43,24 +43,24 @@
   margin-right: 0.5rem;
 }
 
-.nav { 
-    display: flex;
-    align-items: center;
-    gap: 10px; 
- }
-  
-.circleName {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1rem;
-    color: white;
-    background-color: #00bcd4;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-  
+
+.circleName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: white;
+  background-color: #00bcd4;
+}
+
 .navHeading {
   font-size: 1.2rem;
   font-weight: 600;
@@ -83,13 +83,13 @@
   box-sizing: border-box;
 }
 
-.newNoteInput{
+.newNoteInput {
   display: flex;
   align-items: center;
   gap: 8px;
   width: 100%;
-    
 }
+
 .noteInput {
   flex: 1;
   height: 14vh;
@@ -101,12 +101,14 @@
   border: none;
   box-sizing: border-box;
   position: static;
+  width: 100%;
 }
-.noteInput:focus {
-    outline: none;
-  }
 
-.noteInput::placeholder{
+.noteInput:focus {
+  outline: none;
+}
+
+.noteInput::placeholder {
   top: 10%;
   font-size: large;
 }
@@ -144,54 +146,53 @@
 }
 
 .records {
-  flex: 1; 
+  flex: 1;
   overflow-y: auto;
   padding: 10px;
   box-sizing: border-box;
 }
-  
-  .recordsMain {
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
-  }
-  
-  .record {
-    background-color: white; 
-    border: 1px solid #ddd;
-    border-radius: 5px; 
-    padding: 12px; 
-    margin-bottom: 5px; 
-    width: 100%; 
-    height: auto;
-    box-sizing: border-box; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    text-align: justify;
-  }
-  
-  .record h1 {
-    font-size: 1.8em;
-    margin-bottom: 5px;
-  }
-  
-  .record p {
-    font-size: 1.2rem;
-    line-height: 1;
-    margin-bottom: 5px;
-  }
 
-  .record .noteCreatedAt{
-   align-self: flex-end;
-   font-size: 0.7rem;
-   margin-bottom: 0;
-   font-weight: 500;
+.recordsMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.record {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: justify;
+}
 
+.record h1 {
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.record p {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.record .noteCreatedAt {
+  align-self: flex-end;
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* -------------------MEDIA QUERIES------------------- */
 @media (max-width: 768px) {
-  /* Applies to devices 768px wide and below */
   .navbar {
     width: 100vw;
     height: 7%;
@@ -228,7 +229,7 @@
   }
 
   .records {
-    padding-bottom: 24vh; 
+    padding-bottom: 24vh;
   }
 
   .notesPanel {
@@ -237,7 +238,6 @@
 }
 
 @media (min-width: 769px) {
-  /* Applies to tablets in landscape, laptops, and desktops */
   .navbar {
     width: 100%;
     height: 8%;
@@ -266,7 +266,7 @@
 
   .notesPanel {
     flex: 1;
-    width: auto; /* Let flex take over */
+    width: auto;
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -274,7 +274,6 @@
   }
 
   .noteInput {
-    width: 100%;
-  }
+    width: 100%;
+  }
 }
-
