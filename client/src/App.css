@@ -1,55 +1,65 @@
-*{
+/* Reset and Base Styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
   height: 100%;
-  overflow: auto; 
-}
-
-body {
   font-family: 'Roboto', sans-serif;
   background-color: #F7F7F7;
-}
-
-.App {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
   overflow: hidden;
 }
 
-.sidebar {
-  width: 300px;
-  min-width: 300px;
-  max-width: 300px;
+/* App Layout */
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
   height: 100vh;
-  background-color: #f8f8f8;
-  overflow-y: auto;
-  flex-shrink: 0;
-  border-right: 1px solid #ccc;
+  overflow: hidden;
 }
 
+/* Sidebar Panel */
+.sidebar {
+  width: 300px;
+  min-width: 280px;
+  max-width: 300px;
+  background-color: #f8f8f8;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+  flex-shrink: 0;
+  height: 100vh;
+}
+
+/* Main Notes Area */
 .mainContent {
   flex: 1;
   background-color: #DAE5F5;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   min-width: 0;
 }
 
+/* Mobile View */
 @media (max-width: 768px) {
   .App {
     flex-direction: column;
-    width: 100vw;
+  }
+
+  .sidebar {
+    width: 100%;
     height: 100vh;
-    overflow: hidden;
-    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .mainContent {
+    width: 100%;
+    height: 100vh;
   }
 }
