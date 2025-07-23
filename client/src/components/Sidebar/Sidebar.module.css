@@ -77,17 +77,21 @@
 }
 
 .groupBtn {
-  position: fixed;
-  bottom: 10px;
-  right: 16px;
-  width: 55px;
-  height: 55px;
-  font-size: 2.3rem;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 2.2rem;
+  color: white;
+  background-color: #16008b;
   border: none;
   border-radius: 50%;
-  background-color: #16008b;
-  color: white;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
 /* Desktop */
@@ -106,11 +110,21 @@
   }
 
   .groupBtn {
+    position: absolute; /* Position inside the sidebar */
+    bottom: 20px;
+    right: 20px;
     width: 50px;
     height: 50px;
     font-size: 2.2rem;
-    bottom: 10px;
-    right: 16px;
+    color: white;
+    background-color: #16008b;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
   }
 }
 
