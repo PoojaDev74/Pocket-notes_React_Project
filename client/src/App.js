@@ -61,6 +61,7 @@ function App() {
           />
         </Routes>
       ) : (
+           <div  className="layout">
             <div className="sidebar">
                 <Sidebar
                   showGroups={showGroups}
@@ -76,6 +77,7 @@ function App() {
              <WelcomeScreen />
             )}
            </div>
+          </div>
           )}
 
       {newGroupPopupVisible && <PostGroup onClose={toggleNewGroupPopup} />}
