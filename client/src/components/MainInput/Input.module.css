@@ -190,27 +190,6 @@
 }
 
 
-/* -----------Background Image--------------- */
-.contentHeading{
-    font-size: xx-large;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-.contentEnd{
-    margin-top: 120px;
-    position: absolute;
-    bottom: -42%;
-}
-.contentEnd:hover{
-    text-decoration:underline;
-    cursor: pointer;
-}
-i{
-    font-size: small;
-    margin-right: 3px;
-} 
-
-
 @media (max-width: 768px) {
   /* Applies to devices 768px wide and below */
   .navbar {
