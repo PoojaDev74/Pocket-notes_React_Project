@@ -25,13 +25,15 @@
 
 .welcomeScreen {
   flex: 1;
-  padding: 60px;
-  background-position: 50%;
+  background-color: #DAE5F5;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 img {
