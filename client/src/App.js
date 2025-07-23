@@ -40,7 +40,7 @@ function App() {
                       isMobile={isMobile}
                       selectedGroup={selectedGroup}
                     />
-                    {!selectedGroup && <WelcomeScreen />}
+                    {!isMobile && !selectedGroup && <WelcomeScreen />}
                </>
             }
           />
