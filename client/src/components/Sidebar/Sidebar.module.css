@@ -93,6 +93,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 10;
+}
+
+.sidebarFooter {
+  position: relative; 
+  height: 0;          
 }
 
 /* Desktop */
@@ -109,11 +115,6 @@
     max-width: 300px;
     position: relative;
     flex-shrink: 0;
-  }
-
-  .groupBtn {
-     position: fixed;
-     left: 20%;
   }
 }
 
