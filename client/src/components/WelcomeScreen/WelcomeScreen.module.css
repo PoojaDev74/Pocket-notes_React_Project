@@ -6,24 +6,6 @@
   height: 100vh;
   overflow: hidden;
 }
-
-.stickyHeader {
-  position: sticky;
-  top: 0;
-  background-color: #001F8B;
-  color: white;
-  padding: 16px 24px;
-  font-size: 20px;
-  font-weight: bold;
-  z-index: 10;
-}
-
-.scrollableContent {
-  flex: 1;
-  overflow-y: auto;
-  padding: 40px 30px;
-}
-
 .welcomeScreen {
   display: flex;
   flex-direction: column;
@@ -38,6 +20,13 @@
   max-width: 100%;
   object-fit: contain;
 }
+
+
+.emptyState {
+  margin: auto;
+  text-align: center;
+}
+
 
 .emptyState h2 {
   font-size: 28px;
