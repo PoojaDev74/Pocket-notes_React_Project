@@ -108,13 +108,21 @@ const NotesProvider = ({ children }) => {
 
   // ---------------------LOCAL STORAGE---------------//
 
-  useEffect(() => {
-   const storedGroup = localStorage.getItem("selectedGroup");
+useEffect(() => {
+  const hasVisited = localStorage.getItem("hasVisited");
+
+  if (!hasVisited) {
+    // First time — show WelcomeScreen
+    localStorage.setItem("hasVisited", "true");
+    setSelectedGroup(null);
+  } else {
+    const storedGroup = localStorage.getItem("selectedGroup");
     if (storedGroup) {
-    const group = JSON.parse(storedGroup);
-    setSelectedGroup(group);
-  }
-}, []);
+      const group = JSON.parse(storedGroup);
+      setSelectedGroup(group);
+    }
+  }
+}, []);
   
 useEffect(() => {
   if (selectedGroup?._id) {
