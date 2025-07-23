@@ -32,10 +32,7 @@ const Sidebar = ({ showGroups, onStart, isMobile, selectedGroup  }) => {
 
   return (
     <div
-      className={`${styles.container} ${
-        isMobile && selectedGroup ? styles.hide : ""
-      }`}
-    >
+      className={styles.container} >
       <div className={styles.sidebar}>
         <h1 className={styles.heading}>Pocket Notes</h1>
 
