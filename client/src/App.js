@@ -62,7 +62,7 @@ function App() {
         </Routes>
       ) : (
         <>
-            <div className="sidebar">
+            <div className="sidebarContent">
                 <Sidebar
                   showGroups={showGroups}
                   onStart={handleStart}
