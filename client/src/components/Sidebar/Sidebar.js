@@ -36,7 +36,7 @@ const Sidebar = ({ showGroups, onStart, isMobile, selectedGroup  }) => {
       <div className={styles.sidebar}>
         <h1 className={styles.heading}>Pocket Notes</h1>
 
-        <div className={styles.sidebarContent}>
+        <div className={styles.sidebarPanel}>
           <div className={styles.groupNames}>
             <ul>
               {groups?.length > 0 && 
