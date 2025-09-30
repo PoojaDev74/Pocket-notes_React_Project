@@ -22,7 +22,7 @@ Organize your ideas effortlessly! Create groups, add notes, and never lose them 
 
 ## 🔗 Live Demo 
 
-([notemaker](https://notemakerpro.netlify.app/)) 
+https://pocketnotes-app-frontend.onrender.com
 
 ---
 
@@ -36,7 +36,7 @@ Organize your ideas effortlessly! Create groups, add notes, and never lose them 
 ## 🚀 Getting Started
 ```bash
 # 1️⃣ Clone the repo
-git clone https://github.com/yourusername/note-maker.git
+git clone (https://github.com/yourusername/Pocket-notes_React_Project.git)
 cd note-maker
 
 # 2️⃣ Install dependencies
@@ -45,20 +45,7 @@ npm install
 # 3️⃣ Start the development server
 npm start
 ```
-## 📂 Folder Structure
-```bash
-src/
-├── components/
-│   ├── CreateGroup.jsx
-│   ├── GroupList.jsx
-│   ├── NotesList.jsx
-│   ├── NoteForm.jsx
-│   └── EmptyState.jsx
-├── context/Store.js
-├── styles/main.module.css
-├── App.jsx
-└── index.js
-```
+
 ## 🖼 Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c9291f5-4591-47a3-89d8-12d356d187e6" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6e645887-0023-4717-8277-9ca4849d7767" />
