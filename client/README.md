@@ -22,43 +22,28 @@ Organize your ideas effortlessly! Create groups, add notes, and never lose them 
 
 ## 🔗 Live Demo 
 
-([Pocket-notes]([https://pocketnotes-app-frontend.onrender.com]) 
+([https://pocketnotes-app-frontend.onrender.com]) 
 
 ---
 
 ## 🛠 Tech Stack
-⚛ React.js – Frontend framework
-
-🎨 CSS Modules – Styling
-
-💽 LocalStorage – Persistent browser storage
+React.js – Frontend framework
+Node.js - Backend framework
+CSS Modules – Styling
+MongoDB - Database
+LocalStorage – Persistent browser storage
 
 ## 🚀 Getting Started
 ```bash
 # 1️⃣ Clone the repo
 git clone https://github.com/yourusername/Pocket-notes_React_Project.git
-cd note-maker
 
 # 2️⃣ Install dependencies
 npm install
 
 # 3️⃣ Start the development server
 npm start
-```
-## 📂 Folder Structure
-```bash
-src/
-├── components/
-│   ├──GroupPopUp
-|   |  |
-│   ├── GroupList.jsx
-│   ├── NotesList.jsx
-│   ├── NoteForm.jsx
-│   └── EmptyState.jsx
-├── context/Store.js
-├── styles/main.module.css
-├── App.jsx
-└── index.js
+
 ```
 ## 🖼 Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c9291f5-4591-47a3-89d8-12d356d187e6" />
