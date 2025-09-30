@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# 📝 Pocket-notes
+Organize your ideas effortlessly! Create groups, add notes, and never lose them — even after a page reload.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✨ Features
+📂 Create & Manage Groups – Add new groups via popup, close by clicking outside.
 
-## Available Scripts
+🚫 No Duplicates – Prevents adding groups with the same name.
 
-In the project directory, you can run:
+🅰 Auto Avatar – Generates a avatar from group name.
 
-### `npm start`
+🗒 Group-Specific Notes – Each group holds its own notes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+⌨ Quick Save – Save with Enter key or Send icon.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+💾 Persistent Data – Uses LocalStorage to keep notes/groups after reload.
 
-### `npm test`
+🔄 Instant Switching – Changing groups fetches relevant notes instantly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+⏱ Meta Data – Stores date & time for creation & last update.
 
-### `npm run build`
+🎨 Smart Send Button – Active color only when text is present.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔗 Live Demo 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+([Pocket-notes]([https://pocketnotes-app-frontend.onrender.com]) 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠 Tech Stack
+⚛ React.js – Frontend framework
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🎨 CSS Modules – Styling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+💽 LocalStorage – Persistent browser storage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Getting Started
+```bash
+# 1️⃣ Clone the repo
+git clone https://github.com/yourusername/Pocket-notes_React_Project.git
+cd note-maker
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 2️⃣ Install dependencies
+npm install
 
-## Learn More
+# 3️⃣ Start the development server
+npm start
+```
+## 📂 Folder Structure
+```bash
+src/
+├── components/
+│   ├──GroupPopUp
+|   |  |
+│   ├── GroupList.jsx
+│   ├── NotesList.jsx
+│   ├── NoteForm.jsx
+│   └── EmptyState.jsx
+├── context/Store.js
+├── styles/main.module.css
+├── App.jsx
+└── index.js
+```
+## 🖼 Screenshots
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c9291f5-4591-47a3-89d8-12d356d187e6" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6e645887-0023-4717-8277-9ca4849d7767" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/260e401b-1e09-4645-a9ea-3ab3b807f5ed" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c8d150c-6f97-41fe-8ff6-d837848b6854" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebf569a-6ef6-4986-b265-382514a4c6fa" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📜 License
+Licensed under the MIT License – feel free to use & modify!
