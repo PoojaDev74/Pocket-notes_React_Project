@@ -1,4 +1,4 @@
-# 📝 Note Maker
+# 📝 Pocket notes
 Organize your ideas effortlessly! Create groups, add notes, and never lose them — even after a page reload.
 
 ## ✨ Features
@@ -27,17 +27,16 @@ https://pocketnotes-app-frontend.onrender.com
 ---
 
 ## 🛠 Tech Stack
-⚛ React.js – Frontend framework
-
-🎨 CSS Modules – Styling
-
-💽 LocalStorage – Persistent browser storage
+React.js – Frontend framework
+Node.js - Backend framework
+CSS Modules – Styling
+MongoDB - Database
+LocalStorage – Persistent browser storage
 
 ## 🚀 Getting Started
 ```bash
 # 1️⃣ Clone the repo
 git clone (https://github.com/yourusername/Pocket-notes_React_Project.git)
-cd note-maker
 
 # 2️⃣ Install dependencies
 npm install
