@@ -45,13 +45,6 @@ npm install
 npm start
 ```
 
-## 🖼 Screenshots
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1c9291f5-4591-47a3-89d8-12d356d187e6" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6e645887-0023-4717-8277-9ca4849d7767" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/260e401b-1e09-4645-a9ea-3ab3b807f5ed" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c8d150c-6f97-41fe-8ff6-d837848b6854" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebf569a-6ef6-4986-b265-382514a4c6fa" />
-
 
 ## 📜 License
 Licensed under the MIT License – feel free to use & modify!
